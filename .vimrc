@@ -1,4 +1,6 @@
 " pathogen - https://github.com/tpope/vim-pathogen
+" NERDTree - https://github.com/scrooloose/nerdtree
+" YouCompleteMe - https://github.com/Valloric/YouCompleteMe
 " lots of colors - https://github.com/flazz/vim-colorschemes
 " jay colorscheme - https://github.com/josuegaleas/jay.git
 " smarties colorscheme - https://github.com/justb3a/vim-smarties
@@ -10,16 +12,17 @@ filetype plugin indent on
 
 """" colors
 set background=dark
-" colorscheme badwolf 
+colorscheme jay
+" colorscheme badwolf
 " let g:badwolf_darkgutter=1
 " let g:badwolf_tabline=2
-colorscheme jay
 " colorscheme smarties
 
 """" visibility stuff
 set number
 set cursorline
 set showmatch
+hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 """" tab settings
 set tabstop=4
