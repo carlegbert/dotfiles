@@ -1,6 +1,11 @@
 # cat this file
 alias aliases='cat ~/.bash_aliases'
 
+# laziness aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 # xclip aliases
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
@@ -14,3 +19,6 @@ alias dcstop='sudo docker-compose stop'
 alias dcclean='sudo docker-compose rm -f' 
 alias dcprocs='sudo docker-compose ps'
 alias dcdone='sudo docker-compose stop && sudo docker-compose rm -f && sudo docker-compose ps'
+
+# python
+alias python='python3'

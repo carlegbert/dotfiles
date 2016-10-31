@@ -1,5 +1,6 @@
 " pathogen - https://github.com/tpope/vim-pathogen
 " NERDTree - https://github.com/scrooloose/nerdtree
+" NERDCommenter - https://github.com/scrooloose/nerdcommenter
 " YouCompleteMe - https://github.com/Valloric/YouCompleteMe
 " lots of colors - https://github.com/flazz/vim-colorschemes
 " jay colorscheme - https://github.com/josuegaleas/jay.git
@@ -12,11 +13,11 @@ filetype plugin indent on
 
 """" colors
 set background=dark
-colorscheme jay
 " colorscheme badwolf
 " let g:badwolf_darkgutter=1
 " let g:badwolf_tabline=2
 " colorscheme smarties
+colorscheme jay
 
 """" visibility stuff
 set number
@@ -45,4 +46,12 @@ au FileTYpe py set smartindent
 """ ctrl+n toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 """ close NERDTree if it's last tab open 
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+""" nerdcommenter settings
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1 " lol
+let g:NERDDefaultAlign = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
