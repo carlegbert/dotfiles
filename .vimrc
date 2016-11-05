@@ -4,7 +4,6 @@
 " YouCompleteMe - https://github.com/Valloric/YouCompleteMe
 " lots of colors - https://github.com/flazz/vim-colorschemes
 " jay colorscheme - https://github.com/josuegaleas/jay.git
-" smarties colorscheme - https://github.com/justb3a/vim-smarties
 
 execute pathogen#infect()
 
@@ -12,17 +11,13 @@ syntax enable
 filetype plugin indent on
 
 """" colors
-set background=dark
-" colorscheme badwolf
-" let g:badwolf_darkgutter=1
-" let g:badwolf_tabline=2
-" colorscheme smarties
-colorscheme jay
+" colorscheme jay
+" colorscheme jellybeans
+colorscheme landscape
 
 """" visibility stuff
 set number
 set cursorline
-set showmatch
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 """" tab settings
@@ -38,10 +33,6 @@ nnoremap "" :nohlsearch<CR>
 """" misc
 set wildmenu " autocompletion in :cl mode
 set showcmd
-
-""" python stuff
-au FileType py set autoindent
-au FileTYpe py set smartindent
 
 """ ctrl+n toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>

@@ -5,6 +5,7 @@ alias aliases='cat ~/.bash_aliases'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias aptstuff='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
 
 # xclip aliases
 alias setclip='xclip -selection c'

@@ -28,8 +28,8 @@
 #    autocrlf = true
 [alias]
 
-    shlg = log --oneline
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+    shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     plom = pull origin master
     pshom = push origin master
 
