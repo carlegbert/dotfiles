@@ -2,9 +2,12 @@
 " NERDTree - https://github.com/scrooloose/nerdtree
 " NERDCommenter - https://github.com/scrooloose/nerdcommenter
 " YouCompleteMe - https://github.com/Valloric/YouCompleteMe
+" autopairs - https://github.com/jiangmiao/auto-pairs
+" surround.vim - https://github.com/tpope/vim-surround
+" vim-flake8 - https://github.com/nvie/vim-flake8
+" syntastic - https://github.com/vim-syntastic/syntastic.git
 " lots of colors - https://github.com/flazz/vim-colorschemes
 " jay colorscheme - https://github.com/josuegaleas/jay.git
-" autopairs - https://github.com/jiangmiao/auto-pairs
 
 execute pathogen#infect()
 
@@ -55,3 +58,12 @@ let g:NERDCompactSexyComs = 1 " lol
 let g:NERDDefaultAlign = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+""" syntastic settings for idiot mode
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

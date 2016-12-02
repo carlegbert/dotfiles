@@ -1,0 +1,9 @@
+# list files in home dir to be tracked here. for example:
+.bashrc
+.bash_aliases
+.bash_scripts
+.gitconfig
+.gitignore_global
+.inputrc
+.vimrc
+
