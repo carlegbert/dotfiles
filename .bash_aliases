@@ -11,3 +11,6 @@ alias aptstuff='sudo apt-get update && sudo apt-get upgrade'
 # xclip aliases
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
+
+# dotfiler alias
+alias dotfiler='python ~/dotfiles/dotfiler/dotfiler.py'
