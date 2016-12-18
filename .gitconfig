@@ -28,6 +28,7 @@
 #    autocrlf = true
 
 [alias]
+    cm = commit -m
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     plom = pull origin master
