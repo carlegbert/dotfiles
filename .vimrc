@@ -7,7 +7,10 @@
 " vim-flake8 - https://github.com/nvie/vim-flake8
 " syntastic - https://github.com/vim-syntastic/syntastic.git
 " lots of colors - https://github.com/flazz/vim-colorschemes
-" jay colorscheme - https://github.com/josuegaleas/jay.git
+" jinja2 syntax - https://github.com/Glench/Vim-Jinja2-Syntax
+" vim-json - https://github.com/elzr/vim-json
+" vim-gitgutter - https://github.com/airblade/vim-gitgutter
+" fugitive - https://github.com/tpope/vim-fugitive
 
 execute pathogen#infect()
 
@@ -79,3 +82,10 @@ highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
+
+""" vim-gitgutter settings
+nnoremap <F9> :GitGutterToggle<CR>
+nnoremap <C-F9> :GitGutterLineHighlightsToggle<CR>
+
+""" airline settings
+set laststatus=2
