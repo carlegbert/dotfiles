@@ -1,5 +1,6 @@
 # dotfiler
 #### by Carl Egbert - egbertcarl@gmail.com
+#### [https://github.com/carlegbert/dotfiler]
 
 a python script for backing up your dotfiles so you can easily track them with source control or otherwise back them up. files will be backed up to ~/dotfiles.
 

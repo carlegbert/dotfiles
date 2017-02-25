@@ -1,34 +1,13 @@
-" pathogen - https://github.com/tpope/vim-pathogen
-" NERDTree - https://github.com/scrooloose/nerdtree
-" NERDCommenter - https://github.com/scrooloose/nerdcommenter
-" YouCompleteMe - https://github.com/Valloric/YouCompleteMe
-" autopairs - https://github.com/jiangmiao/auto-pairs
-" surround.vim - https://github.com/tpope/vim-surround
-" vim-flake8 - https://github.com/nvie/vim-flake8
-" syntastic - https://github.com/vim-syntastic/syntastic.git
-" lots of colors - https://github.com/flazz/vim-colorschemes
-" jinja2 syntax - https://github.com/Glench/Vim-Jinja2-Syntax
-" vim-json - https://github.com/elzr/vim-json
-" vim-gitgutter - https://github.com/airblade/vim-gitgutter
-" fugitive - https://github.com/tpope/vim-fugitive
-
-execute pathogen#infect()
+" minimal vim settings for use over SSH or other machines
 
 syntax enable 
 filetype plugin indent on
 
-"""" colors
-" colorscheme jay
-" colorscheme jellybeans
-colorscheme landscape
-
-"""" visibility stuff
 set number
+colorscheme desert
 set cursorline
-" set showmatch
+hi CursorLine cterm=NONE ctermbg=236
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
-
-"""" cursor
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
@@ -44,48 +23,8 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 
 """" search
 set hlsearch 
-nnoremap "" :nohlsearch<CR>
+nnoremap ;; :nohlsearch<CR>
 
 """" misc
 set wildmenu " autocompletion in :cl mode
 set showcmd
-
-""" ctrl+n toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-""" close NERDTree if it's last tab open 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-""" nerdcommenter settings
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1 " lol
-let g:NERDDefaultAlign = 1
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-
-""" syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-
-""" vim-gitgutter settings
-nnoremap <F9> :GitGutterToggle<CR>
-nnoremap <C-F9> :GitGutterLineHighlightsToggle<CR>
-
-""" airline settings
-set laststatus=2

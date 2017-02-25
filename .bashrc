@@ -107,7 +107,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 ### Added by the Heroku Toolbelt
@@ -115,3 +115,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### add npm global to path
 export PATH="/home/carl/.npm-global/bin:$PATH"
+
+### panel stuff
+export PATH="/home/carl/.config/panel:$PATH"
