@@ -6,7 +6,7 @@ alias aliases='cat ~/.bash_aliases'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # laziness aliases
-alias ..='_..' # see ~/.bash_scripts/dotscript
+alias ..='_..' # see ~/.bash_scripts
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias dev='cd ~/dev'
@@ -27,6 +27,3 @@ alias getclip='xclip -selection clipboard -o'
 
 # dotfiler alias
 alias dotfiler='python ~/dotfiles/dotfiler/dotfiler.py'
-
-# show/hide unity launcher
-alias ltog='. ~/.bash_scripts/launcher.sh'

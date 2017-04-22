@@ -2,6 +2,7 @@
 ; `$ polybar top` to run
 
 [bar/top]
+monitor = ${env:MONITOR}
 width = 100%
 height = 35 
 offset-x = 0
@@ -47,6 +48,7 @@ ws-icon-1 = term;
 ws-icon-2 = chat;
 ws-icon-3 = code;
 ws-icon-4 = music;
+ws-icon-5 = web;&#xf0e0;
 ws-icon-default = 
 
 format = <label-state> <label-mode>
@@ -191,9 +193,9 @@ menu-0-0-padding = 3
 menu-0-1-padding = 3
 
 menu-1-0 = reboot?
-menu-1-0-exec = sudo shutdown now -r
+menu-1-0-exec = shutdown now -r
 menu-1-0-padding = 3
 
 menu-2-0 = power off?  
-menu-2-0-exec = sudo shutdown now
+menu-2-0-exec = shutdown now
 menu-2-0-padding = 3
