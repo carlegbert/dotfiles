@@ -5,14 +5,12 @@
 " :PlugInstall
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'flazz/vim-colorschemes'
-
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-syntastic/syntastic'
@@ -29,9 +27,9 @@ syntax enable
 filetype plugin indent on
 
 """" colors
-" colorscheme jellybeans
-colorscheme landscape
-let g:airline_theme="raven"
+set background=dark
+colorscheme gruvbox
+let g:airline_theme="gruvbox"
 
 """" visibility stuff
 set number
@@ -117,6 +115,11 @@ nnoremap <C-F9> :GitGutterLineHighlightsToggle<CR>
 
 """ airline settings
 set laststatus=2
+let g:airline_powerline_fonts=1
+" if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+" endif
+" let g:airline_symbols.space = "\ua0"
 
 """ deoplete settings
 let g:deoplete#enable_at_startup = 1

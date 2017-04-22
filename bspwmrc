@@ -1,11 +1,12 @@
-#! /bin/sh
+#!/bin/sh
 
 sxhkd &
-polybar top &
-feh --bg-fill /home/carl/Pictures/Wind-Vector-resize.png &
+feh --randomize --bg-fill /home/carl/Pictures/walls/*.png &
 
-bspc monitor eDP1 -d I II III IV V
-bspc monitor DP1 -d VI VII VIII IX X
+bash /home/carl/.config/polybar/barlauncher &
+
+bspc monitor eDP-1 -d I II III IV V
+bspc monitor DP-1 -d VI VII VIII IX X
 
 bspc config border_width         4
 bspc config window_gap           8

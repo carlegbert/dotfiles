@@ -19,7 +19,6 @@ alias l='ls -CF'
 alias mkdir='mkdir -pv'
 alias ports='netstat -tuvanp'
 alias cp='cp -iv'
-alias vim='nvim'
 
 # xclip aliases
 alias setclip='xclip -selection c'
