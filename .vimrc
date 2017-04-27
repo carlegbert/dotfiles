@@ -13,13 +13,13 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 """" tab settings
-set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=2 sts=2 sw=2
+autocmd Filetype html setlocal  sts=2 sw=2
+autocmd Filetype javascript setlocal  sts=2 sw=2
+autocmd Filetype css setlocal sts=2 sw=2
+autocmd Filetype json setlocal sts=2 sw=2
 
 """" search
 set hlsearch 
@@ -28,3 +28,6 @@ nnoremap ;; :nohlsearch<CR>
 """" misc
 set wildmenu " autocompletion in :cl mode
 set showcmd
+
+"""" load aliases
+source $HOME/.vim_aliases

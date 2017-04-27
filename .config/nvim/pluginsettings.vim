@@ -10,6 +10,9 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+""" airline settings
+let g:airline#extensions#tabline#enabled = 1
+
 """ vim-gitgutter settings
 nnoremap <F9> :GitGutterToggle<CR>
 nnoremap <C-F9> :GitGutterLineHighlightsToggle<CR>
@@ -27,9 +30,6 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 """ autopair settings (default, reproduced for reference)
-" <M> = alt
-" <CR> = enter
-" <BS> = backspace
 " <CR>  " Insert new indented line after return if cursor in blank brackets or quotes.
 " <BS>  " Delete brackets in pair
 " <M-p> " Toggle Autopairs (g:AutoPairsShortcutToggle)
