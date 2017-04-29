@@ -1,9 +1,9 @@
 #!/bin/sh
 
 sxhkd &
-feh --randomize --bg-fill /home/carl/Pictures/walls/*.png &
+bash $HOME/.scripts/randwall.sh &
 
-bash /home/carl/.config/polybar/barlauncher &
+bash $HOME/.config/polybar/barlauncher &
 
 bspc monitor eDP-1 -d I II III IV V
 bspc monitor DP-1 -d VI VII VIII IX X

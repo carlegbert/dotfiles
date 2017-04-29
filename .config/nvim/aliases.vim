@@ -26,3 +26,14 @@ nnoremap <leader>w <C-w>
 """ motion
 nnoremap H ^
 nnoremap L $
+
+""" space-# to toggle number/relativenumber
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunc
+nnoremap <leader># :call NumberToggle()<CR>

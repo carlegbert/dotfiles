@@ -25,5 +25,6 @@ alias e='nvim'
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
 
-# dotfiler alias
-alias dotfiler='python ~/dotfiles/dotfiler/dotfiler.py'
+# new wallpapers
+alias randwall='bash $HOME/.scripts/randwall.sh'
+

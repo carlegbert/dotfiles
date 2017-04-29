@@ -28,6 +28,7 @@ nnoremap ;; :nohlsearch<CR>
 """" misc
 set wildmenu " autocompletion in :cl mode
 set showcmd
+set mouse=a
 
 """" load aliases
 source $HOME/.vim_aliases

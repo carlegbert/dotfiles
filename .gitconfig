@@ -22,6 +22,7 @@
     
 [core]
     excludesfile = ~/.gitignore_global
+    editor = vim
 #   *nix/osx
     autocrlf = input
 #   windows :(
@@ -34,7 +35,6 @@
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     plom = pull origin master
     pshom = push origin master
-    addu = add $(git ls-files -o --exclude-standard) # add untracked files
     idiff = diff --word-diff=plain
 
 [github]
