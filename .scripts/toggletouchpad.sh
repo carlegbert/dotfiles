@@ -1,12 +1,13 @@
 #!/bin/bash
 
+devicenum=$(xinput | grep Touchpad | awk '{print $6}' | sed 's/id=//')
 declare -i STATE
-STATE=`xinput list-props 11 | grep 'Device Enabled' | awk '{print $4}'`
+STATE=`xinput list-props $devicenum | grep 'Device Enabled' | awk '{print $4}'`
 if [ $STATE -eq 1 ]
 then
-    xinput disable 11
+    xinput disable $devicenum
     echo "Touchpad disabled."
 else
-    xinput enable 11
+    xinput enable $devicenum
     echo "Touchpad enabled."
 fi

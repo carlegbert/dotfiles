@@ -16,7 +16,7 @@ ctrl + alt + w
 
 # disable touchpad
 alt + t
-    bash ~/.scripts/toggletouchpad.sh
+    bash $HOME/.scripts/toggletouchpad.sh
 
 # program launcher
 super + space

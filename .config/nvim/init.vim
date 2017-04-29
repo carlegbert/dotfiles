@@ -1,12 +1,9 @@
 " neovim configuration
 
 " vim-plug
-" To install plugins:
-" :PlugInstall
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-vinegar'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -16,10 +13,11 @@ Plug 'morhetz/gruvbox'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
+Plug 'zchee/deoplete-jedi'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
 
+Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive' " TODO: learn how to use this
 
@@ -55,8 +53,10 @@ autocmd Filetype json setlocal ts=2 sts=2 sw=2
 
 """" search
 set hlsearch
+set noincsearch
 nnoremap ;; :nohlsearch<CR>
 
 """" misc
-set wildmenu " autocompletion in :cl mode
+set wildmenu
 set showcmd
+set lazyredraw
