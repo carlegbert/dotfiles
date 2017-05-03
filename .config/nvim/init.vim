@@ -13,7 +13,6 @@ Plug 'morhetz/gruvbox'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-syntastic/syntastic'
-Plug 'zchee/deoplete-jedi'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
 

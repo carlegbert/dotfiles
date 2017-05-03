@@ -27,4 +27,3 @@ alias getclip='xclip -selection clipboard -o'
 
 # new wallpapers
 alias randwall='bash $HOME/.scripts/randwall.sh'
-

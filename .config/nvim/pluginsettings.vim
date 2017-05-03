@@ -1,7 +1,7 @@
 """ ctrl+n toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-""" close NERDTree if it's last tab open 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" map <C-n> :NERDTreeToggle<CR>
+" """ close NERDTree if it's last tab open
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """ nerdcommenter settings
 let g:NERDSpaceDelims = 1
