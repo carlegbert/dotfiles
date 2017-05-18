@@ -1,14 +1,7 @@
 """ aliases and mappings
 
-" common ex mode typos
-cnoreabbrev W w
-cnoreabbrev Wall wall
-cnoreabbrev W! w!
-cnoreabbrev Wq wq
-cnoreabbrev Q q
-cnoreabbrev Qall qall
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall
+" ; instead of :
+nnoremap ; :
 
 " jk = esc in insert mode
 inoremap jk <Esc>
@@ -24,13 +17,11 @@ nnoremap <leader><leader>] :bnext<CR>
 nnoremap <leader><leader>[ :bprev<CR>
 " space-space-del to delete buffer
 nnoremap <leader><leader><Del> :bdelete<CR>
+" space-b to list buffers and prompt for numbered selection
+nnoremap <leader>b :ls<CR>:b<space>
 
 " space-w instead of ctrl-w
 nnoremap <leader>w <C-w>
-
-""" motion
-nnoremap H ^
-nnoremap L $
 
 """ space-# to toggle number/relativenumber
 function! NumberToggle()

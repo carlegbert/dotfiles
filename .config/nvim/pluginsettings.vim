@@ -1,8 +1,3 @@
-""" ctrl+n toggle NERDTree
-" map <C-n> :NERDTreeToggle<CR>
-" """ close NERDTree if it's last tab open
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 """ nerdcommenter settings
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1 " lol
@@ -10,20 +5,14 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
-""" airline settings
-let g:airline#extensions#tabline#enabled = 1
-
 """ vim-gitgutter settings
 nnoremap <F9> :GitGutterToggle<CR>
 nnoremap <C-F9> :GitGutterLineHighlightsToggle<CR>
 
 """ airline settings
+let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts=1
-" if !exists('g:airline_symbols')
-"   let g:airline_symbols = {}
-" endif
-" let g:airline_symbols.space = "\ua0"
 
 """ deoplete settings
 let g:deoplete#enable_at_startup = 1

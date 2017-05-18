@@ -8,15 +8,15 @@ shopt -s dotglob
 mklinks() {
   for f in $1/*; do
     fileloc=$(echo $f | sed 's/dotfiles\///g')
-    if [ -d $f ] && [ $f != "$HOME/dotfiles/.git" ] && [ "$(ls -A $f)" ]; then
-      if ! [ -e $fileloc ]; then
+    if [ -d "$f" ] && [ $f != "$HOME/dotfiles/.git" ] && [ "$(ls -A $f)" ]; then
+      if ! [ -e "$fileloc" ]; then
         echo "Creating directory $fileloc"
-        mkdir $fileloc
+        mkdir "$fileloc"
       fi
-      mklinks $f
-    elif ! [ -d $f ] && [ $f != "$HOME/dotfiles/linker.sh" ]; then
+      mklinks "$f"
+    elif ! [ -d "$f" ] && [ "$f" != "$HOME/dotfiles/linker.sh" ]; then
       echo "$f links to $fileloc"
-      ln -sf $f $fileloc
+      ln -sf "$f" "$fileloc"
     fi
   done
 }

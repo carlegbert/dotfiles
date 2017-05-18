@@ -29,18 +29,18 @@ source $HOME/.config/nvim/aliases.vim
 syntax enable 
 filetype plugin indent on
 
-"""" colors
+""" colors
 set background=dark
 colorscheme gruvbox
 let g:airline_theme="gruvbox"
 
-"""" visibility stuff
+""" visibility stuff
 set number
 set cursorline
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-"""" tab settings
+""" tab settings
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -51,12 +51,17 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 
-"""" search
+""" search
 set hlsearch
-set noincsearch
-nnoremap ;; :nohlsearch<CR>
+set incsearch
+nnoremap <Esc> :nohlsearch<CR>
 
-"""" misc
+""" split settings
+set splitright
+set splitbelow
+
+""" misc
 set wildmenu
 set showcmd
 set lazyredraw
+set hidden

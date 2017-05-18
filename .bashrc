@@ -107,7 +107,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 ### add npm global to path

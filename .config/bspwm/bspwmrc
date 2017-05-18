@@ -1,7 +1,6 @@
 #!/bin/sh
 
 sxhkd &
-bash $HOME/.scripts/randwall.sh &
 
 bash $HOME/.config/polybar/barlauncher &
 

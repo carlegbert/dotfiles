@@ -7,11 +7,11 @@ super + Return
     gnome-terminal
 
 # email
-ctrl + shift + e
+super + t
     thunderbird
 
 # browser
-ctrl + alt + w
+super + b
     google-chrome
 
 # disable touchpad
@@ -20,7 +20,7 @@ alt + t
 
 # program launcher
 super + space
-    dmenu_run -fn 'Inconsolata-23'
+    dmenu_run -fn 'Inconsolata-18'
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -36,6 +36,7 @@ XF86AudioMute
 # brightness
 XF86MonBrightness{Down,Up}
     xbacklight -{dec,inc} 10
+    # xrandr --output [monitor] --brightness <decimal>
 
 #
 # bspwm hotkeys
