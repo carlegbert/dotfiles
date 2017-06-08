@@ -56,9 +56,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u:\w\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\u:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -110,5 +110,4 @@ fi
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-### add npm global to path
-export PATH="/home/carl/.npm-global/bin:$PATH"
+export PATH=/home/carl/.npm-global/bin:/home/carl/.pyenv/plugins/pyenv-virtualenv/shims:/home/carl/.pyenv/shims:/home/carl/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/carl/bin

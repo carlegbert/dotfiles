@@ -22,46 +22,12 @@ Plug 'tpope/vim-fugitive' " TODO: learn how to use this
 
 call plug#end()
 
+source $HOME/.vimrc
 source $HOME/.config/nvim/pluginsettings.vim
 source $HOME/.config/nvim/syntasticsettings.vim
-source $HOME/.config/nvim/aliases.vim
-
-syntax enable 
-filetype plugin indent on
 
 """ colors
 set background=dark
 colorscheme gruvbox
 let g:airline_theme="gruvbox"
-
-""" visibility stuff
-set number
-set cursorline
-hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-""" tab settings
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=2 sts=2 sw=2
-autocmd Filetype json setlocal ts=2 sts=2 sw=2
-autocmd Filetype sh setlocal ts=2 sts=2 sw=2
-
-""" search
-set hlsearch
-set incsearch
-nnoremap <Esc> :nohlsearch<CR>
-
-""" split settings
-set splitright
-set splitbelow
-
-""" misc
-set wildmenu
-set showcmd
-set lazyredraw
-set hidden
