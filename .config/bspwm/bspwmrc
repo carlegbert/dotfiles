@@ -2,6 +2,8 @@
 
 sxhkd &
 
+feh --randomize --bg-fill $HOME/Pictures/walls/*.png &
+
 bash $HOME/.config/polybar/barlauncher &
 
 bspc monitor eDP-1 -d I II III IV V
