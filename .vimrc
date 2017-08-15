@@ -43,7 +43,6 @@ set incsearch
 set wrapscan
 set ignorecase
 set smartcase
-nnoremap <silent><Esc> :nohlsearch<CR>
 
 """ split settings
 set splitright

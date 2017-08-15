@@ -11,3 +11,6 @@ set list
 colorscheme gruvbox
 let g:airline_theme="gruvbox"
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+" for some reason normal vim hates this mapping???
+nnoremap <silent><Esc> :nohlsearch<CR>
