@@ -19,7 +19,7 @@
     added = green
     changed = yellow
     untracked = red
-    
+
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
@@ -38,10 +38,7 @@
     idiff = diff --word-diff=plain
 
 [github]
-	user = carlegbert
-    
-[credential]
-	helper = cache --timeout=36000
+    user = carlegbert
 
 [grep]
     break = true
