@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#
+# script for toggling unity launcher
 # this was shamelessly stolen from SO
 
 launcher=$(gsettings get \

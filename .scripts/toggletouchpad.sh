@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# script for toggling laptop touchpad
 
 devicenum=$(xinput | grep Touchpad | awk '{print $6}' | sed 's/id=//')
 declare -i state

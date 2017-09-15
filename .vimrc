@@ -77,9 +77,6 @@ cnoreabbrev Qall qall
 cnoreabbrev Qall! qall
 cnoreabbrev Wqall wqall
 
-" jk = esc in insert mode
-inoremap jk <Esc>
-
 " space is leader
 let mapleader = "\<Space>"
 
