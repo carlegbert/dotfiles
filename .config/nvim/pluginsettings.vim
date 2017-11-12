@@ -18,6 +18,9 @@ let g:airline_powerline_fonts=1
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+""" vim-javascript settings
+let g:javascript_plugin_jsdoc = 1
+
 """ autopair settings (default, reproduced for reference)
 " <CR>  " Insert new indented line after return if cursor in blank brackets or quotes.
 " <BS>  " Delete brackets in pair

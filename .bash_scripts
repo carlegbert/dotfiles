@@ -8,7 +8,8 @@ function _..() {
 
   re='^[0-9]+$'
   if ! [[ $1 =~ $re  ]] ; then
-    echo "error: Not a number" >&2; return 1;
+    echo "error: Not a number" >&2;
+    return 1;
   fi
 
   for i in `seq 1 $1`; do
@@ -20,4 +21,20 @@ function _..() {
 function mkcd() {
   mkdir $1
   cd $1
+}
+
+function setvol() {
+  if [ $# = 0 ]; then
+    echo "useage: setvol <number>" >&2;
+    return 1;
+  fi
+
+  re='^[0-9]+$'
+  if ! [[ $1 =~ $re  ]] ; then
+    echo "error: Not a number" >&2;
+    return 1;
+  fi
+
+  amixer -D pulse sset Master "$1%" > /dev/null;
+  return 0;
 }

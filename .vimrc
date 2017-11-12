@@ -4,8 +4,8 @@
 " | and several others)                                      |
 " +----------------------------------------------------------+
 
-syntax enable
 filetype plugin indent on
+syntax enable
 
 
 colorscheme desert
@@ -97,6 +97,10 @@ nnoremap <leader>w <C-w>
 " tab -> % in normal/visual mode
 nnoremap <tab> %
 vnoremap <tab> %
+
+" H and L -> ^ and $
+nnoremap H ^
+nnoremap L $
 
 " space-# to toggle number/relativenumber
 function! NumberToggle()
