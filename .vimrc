@@ -102,6 +102,9 @@ vnoremap <tab> %
 nnoremap H ^
 nnoremap L $
 
+" shift+tab to unindent
+nnoremap <S-tab> <<
+
 " space-# to toggle number/relativenumber
 function! NumberToggle()
     if(&relativenumber == 1)

@@ -2,6 +2,12 @@
     name = Carl Egbert
     email = egbertcarl@gmail.com
 
+[github]
+    user = carlegbert
+
+[credential]
+    helper = cache --timeout=36000
+
 [color]
     branch = auto
     diff = auto
@@ -30,18 +36,13 @@
 
 [alias]
     cm = commit -m
+    addp = add -p
     amend = commit --amend --no-edit
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     plom = pull origin master
     pshom = push origin master
     idiff = diff --word-diff=plain
-
-[credential]
-    helper = cache --timeout=36000
-
-[github]
-    user = carlegbert
 
 [grep]
     break = true

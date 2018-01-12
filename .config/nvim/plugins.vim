@@ -12,9 +12,8 @@ Plug 'morhetz/gruvbox'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-syntastic/syntastic'
-Plug 'pangloss/vim-javascript'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'elzr/vim-json'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'

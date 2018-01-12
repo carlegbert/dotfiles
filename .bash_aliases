@@ -9,7 +9,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias ..='_..' # see ~/.bash_scripts
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias dev='cd ~/dev'
 alias update='sudo apt-get update -y'
 alias upgrade='sudo apt-get upgrade -y'
 alias autoremove='sudo apt-get autoremove -y'
