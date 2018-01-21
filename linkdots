@@ -14,7 +14,7 @@ mklinks() {
         mkdir "$fileloc"
       fi
       mklinks "$f"
-    elif ! [ -d "$f" ] && [ "$f" != "$HOME/dotfiles/linker" ]; then
+    elif ! [ -d "$f" ] && [ "$f" != "$HOME/dotfiles/linkdots" ]; then
       echo "$f links to $fileloc"
       ln -sf "$f" "$fileloc"
     fi

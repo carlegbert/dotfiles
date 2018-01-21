@@ -1,14 +1,14 @@
-" +----------------------------------------------------------+
-" | egbertcarl@gmail.com                                     |
-" | see also: .config/nvim/init.vim (which sources this file |
-" | and several others)                                      |
-" +----------------------------------------------------------+
-
 filetype plugin indent on
 syntax enable
 
+source $HOME/.vim/plugins.vim
+source $HOME/.vim/pluginsettings.vim
+source $HOME/.vim/syntasticsettings.vim
 
-colorscheme desert
+colorscheme gruvbox
+set background=dark
+let g:airline_theme="gruvbox"
+
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 if (!has('nvim'))
      let &t_SI = "\<Esc>[6 q"
@@ -63,9 +63,7 @@ set scrolloff=10
 set nowrap
 set noswapfile
 
-" +----------------------+
-" | aliases and mappings |
-" +----------------------+
+""" aliases and mappings
 
 " catch common typos
 cnoreabbrev W w
