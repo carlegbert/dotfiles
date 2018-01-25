@@ -1,13 +1,14 @@
 filetype plugin indent on
 syntax enable
-
-source $HOME/.vim/plugins.vim
-source $HOME/.vim/pluginsettings.vim
-source $HOME/.vim/syntasticsettings.vim
-
-colorscheme gruvbox
 set background=dark
-let g:airline_theme="gruvbox"
+
+if (!empty(glob("$HOME/.vim/autoload/plug.vim")))
+    source $HOME/.vim/plugins.vim
+    source $HOME/.vim/pluginsettings.vim
+    source $HOME/.vim/syntasticsettings.vim
+    colorscheme gruvbox
+    let g:airline_theme="gruvbox"
+endif
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 if (!has('nvim'))
@@ -113,3 +114,6 @@ function! NumberToggle()
     endif
 endfunc
 nnoremap <silent><leader># :call NumberToggle()<CR>
+
+" completion
+set omnifunc=syntaxcomplete#Complete

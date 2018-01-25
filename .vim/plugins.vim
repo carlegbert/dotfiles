@@ -10,11 +10,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" deoplete deps
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-
 Plug 'vim-syntastic/syntastic'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
