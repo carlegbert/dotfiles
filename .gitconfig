@@ -37,6 +37,7 @@
 [alias]
     cm = commit -m
     addp = add -p
+    cb = checkout -b
     amend = commit --amend --no-edit
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD

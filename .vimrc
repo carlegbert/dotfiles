@@ -18,16 +18,9 @@ if (!has('nvim'))
 endif
 
 autocmd Filetype html setlocal  sts=2 sw=2
-autocmd Filetype javascript setlocal  sts=2 sw=2
 autocmd Filetype css setlocal sts=2 sw=2
 autocmd Filetype json setlocal sts=2 sw=2
 autocmd Filetype sh setlocal ts=2 sts=2 sw=2
-
-""" tab settings
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 
 """ indentation settings
 set smartindent
@@ -104,16 +97,25 @@ nnoremap L $
 " shift+tab to unindent
 nnoremap <S-tab> <<
 
+" hide search results with esc in normal mode
+nnoremap \ :nohlsearch<Enter>
+
 " space-# to toggle number/relativenumber
 function! NumberToggle()
     if(&relativenumber == 1)
         set number
         set norelativenumber
     else
-        set relativenumber
+        set r1elativenumber
     endif
 endfunc
 nnoremap <silent><leader># :call NumberToggle()<CR>
 
 " completion
-set omnifunc=syntaxcomplete#Complete
+if !exists("b:did_ftplugin")
+    set omnifunc=syntaxcomplete#Complete
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+endif
