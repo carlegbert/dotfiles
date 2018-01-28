@@ -2,12 +2,16 @@
 
 sxhkd &
 
-feh --randomize --bg-fill $HOME/Pictures/walls/*.png &
+xset +fp /home/carl/.fonts &
+xset fp rehash &
+
+# feh --randomize --bg-fill $HOME/Pictures/walls/*.png &
 
 bash $HOME/.config/polybar/barlauncher &
 
-bspc monitor eDP-1 -d I II III IV V
-bspc monitor DP-1 -d VI VII VIII IX X
+bspc monitor -d I II III IV V VI VII VIII IV X
+# bspc monitor eDP-1 -d I II III IV V
+# bspc monitor DP-1 -d VI VII VIII IX X
 
 bspc config border_width         4
 bspc config window_gap           8
