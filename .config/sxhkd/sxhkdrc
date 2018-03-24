@@ -14,10 +14,6 @@ super + t
 super + b
     google-chrome
 
-# disable touchpad
-alt + t
-    bash $HOME/.scripts/toggletouchpad.sh
-
 # program launcher
 super + space
     dmenu_run -fn 'Inconsolata-18'

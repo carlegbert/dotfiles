@@ -101,7 +101,10 @@ nnoremap H ^
 nnoremap L $
 
 " shift+tab to unindent
-nnoremap <S-tab> <<
+inoremap <S-tab> <C-d>
+
+" jk to leave insert
+inoremap jk <Esc>
 
 " hide search results with space-n
 nnoremap <leader>s /
