@@ -1,4 +1,0 @@
-Some commands I forgot too often
-
-<M-n> - jump to next closed pair (from autopairs)
-<C-r>" - in insert mode, paste from unnamed register (last yank/delete)
