@@ -106,6 +106,10 @@ inoremap <S-tab> <C-d>
 " jk to leave insert
 inoremap jk <Esc>
 
+" leader+o leader+O to insert newline in normal mode
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>j
+
 " hide search results with space-n
 nnoremap <leader>s /
 nnoremap <leader>r :%s/
