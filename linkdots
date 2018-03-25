@@ -1,24 +1,54 @@
-#!/bin/bash
-#
-# Script for creating symlinks from $HOME/dotfiles to $HOME.
-# Already-existing files will be overwritten by links!
+#!/usr/bin/python3
 
-shopt -s dotglob
+import argparse
+import os
 
-mklinks() {
-  for f in $1/*; do
-    fileloc=$(echo $f | sed 's/dotfiles\///g')
-    if [ -d "$f" ] && [ $f != "$HOME/dotfiles/.git" ] && [ "$(ls -A $f)" ]; then
-      if ! [ -e "$fileloc" ]; then
-        echo "Creating directory $fileloc"
-        mkdir "$fileloc"
-      fi
-      mklinks "$f"
-    elif ! [ -d "$f" ] && [ "$f" != "$HOME/dotfiles/linkdots" ]; then
-      echo "$f links to $fileloc"
-      ln -sf "$f" "$fileloc"
-    fi
-  done
-}
 
-mklinks "$HOME/dotfiles"
+HOME = os.environ['HOME']
+CWD = os.getcwd()
+SHARED = os.path.join(CWD, 'shared')
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--source')
+parser.add_argument('--verbose', action='store_true')
+parser.add_argument('--dry', action='store_true')
+args = parser.parse_args()
+
+
+def mklink(src, dest):
+    if args.dry:
+        print('Would make link to %s at %s' % (src, dest))
+        return
+    if args.verbose:
+        print('Creating link to %s at %s' % (src, dest))
+    os.symlink(src, dest)
+
+
+def mkdir(dest):
+    if args.dry:
+        print('Would create directory %s' % dest)
+        return
+    if args.verbose:
+        print('Creating directory %s' % dest)
+        os.mkdir(dest)
+
+
+def mklinks(src, dest):
+    if args.verbose:
+        print('Making links for directory %s' % src)
+    for filename in os.listdir(src):
+        fullpath = os.path.join(src, filename)
+        target = os.path.join(dest, filename)
+        if os.path.isdir(fullpath):
+            if not os.path.exists(target):
+                mkdir(target)
+            mklinks(fullpath, target)
+        elif os.path.exists(target) and args.verbose:
+                print('File %s already exists' % target)
+        if os.path.isfile(fullpath) and not os.path.exists(target):
+            mklink(fullpath, target)
+
+if __name__ == '__main__':
+    mklinks(SHARED, HOME)
+    if args.source:
+        mklinks(os.path.join(CWD, args.source), HOME)
