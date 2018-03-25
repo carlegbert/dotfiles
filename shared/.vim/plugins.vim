@@ -11,8 +11,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
 Plug 'vim-syntastic/syntastic'
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'nvie/vim-flake8'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'

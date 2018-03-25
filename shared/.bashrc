@@ -97,5 +97,5 @@ if [ -f ~/.bash_scripts ]; then
   . ~/.bash_scripts
 fi
 
-export VISUAL="vim"
-export EDITIOR="$VISUAL"
+export VISUAL=vim
+export EDITOR="$VISUAL"

@@ -2,6 +2,12 @@ filetype plugin indent on
 syntax enable
 set background=dark
 
+set omnifunc=syntaxcomplete#Complete
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 if (!empty(glob("$HOME/.vim/autoload/plug.vim")))
     source $HOME/.vim/plugins.vim
     source $HOME/.vim/pluginsettings.vim
@@ -95,10 +101,15 @@ nnoremap H ^
 nnoremap L $
 
 " shift+tab to unindent
-nnoremap <S-tab> <<
+inoremap <S-tab> <C-d>
 
-" hide search results with esc in normal mode
-nnoremap \ :nohlsearch<Enter>
+" jk to leave insert
+inoremap jk <Esc>
+
+" hide search results with space-n
+nnoremap <leader>s /
+nnoremap <leader>r :%s/
+nnoremap <silent><leader>n :nohlsearch<Enter>
 
 " space-# to toggle number/relativenumber
 function! NumberToggle()
@@ -106,16 +117,7 @@ function! NumberToggle()
         set number
         set norelativenumber
     else
-        set r1elativenumber
+        set relativenumber
     endif
 endfunc
 nnoremap <silent><leader># :call NumberToggle()<CR>
-
-" completion
-if !exists("b:did_ftplugin")
-    set omnifunc=syntaxcomplete#Complete
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
-    set expandtab
-endif

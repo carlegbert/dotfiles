@@ -2,12 +2,15 @@
 
 sxhkd &
 
+xset +fp /home/carl/.fonts &
+xset fp rehash &
 feh --randomize --bg-fill $HOME/Pictures/walls/*.png &
-
+xrandr --output "DVI-D-0" --rotate left &
+xrandr --output "DP-2" --primary &
 bash $HOME/.config/polybar/barlauncher &
 
-bspc monitor eDP-1 -d I II III IV V
-bspc monitor DP-1 -d VI VII VIII IX X
+bspc monitor DP-2 -d I II III IV V
+bspc monitor DVI-D-0 -d VI VII VIII IX X
 
 bspc config border_width         4
 bspc config window_gap           8
