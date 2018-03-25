@@ -21,6 +21,8 @@ def mklink(src, dest):
         return
     if args.verbose:
         print('Creating link to %s at %s' % (src, dest))
+    if os.path.exists(dest):
+        os.remove(dest)
     os.symlink(src, dest)
 
 
@@ -43,9 +45,7 @@ def mklinks(src, dest):
             if not os.path.exists(target):
                 mkdir(target)
             mklinks(fullpath, target)
-        elif os.path.exists(target) and args.verbose:
-                print('File %s already exists' % target)
-        if os.path.isfile(fullpath) and not os.path.exists(target):
+        else:
             mklink(fullpath, target)
 
 if __name__ == '__main__':
