@@ -32,18 +32,19 @@ def mkdir(dest):
         return
     if args.verbose:
         print('Creating directory %s' % dest)
-        os.mkdir(dest)
+    os.mkdir(dest)
 
 
 def mklinks(src, dest):
+    if not os.path.exists(dest):
+        mkdir(dest)
+
     if args.verbose:
         print('Making links for directory %s' % src)
     for filename in os.listdir(src):
         fullpath = os.path.join(src, filename)
         target = os.path.join(dest, filename)
         if os.path.isdir(fullpath):
-            if not os.path.exists(target):
-                mkdir(target)
             mklinks(fullpath, target)
         else:
             mklink(fullpath, target)
