@@ -60,6 +60,7 @@ set lazyredraw
 set hidden
 set mouse=a
 set scrolloff=10
+set sidescrolloff=10
 set nowrap
 set noswapfile
 

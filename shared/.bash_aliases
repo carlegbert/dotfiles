@@ -41,3 +41,5 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
+# hack for virtualenv pip freeze bug
+alias pipfreeze='pip freeze | grep -v "pkg-resources"'

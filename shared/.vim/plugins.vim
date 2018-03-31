@@ -3,6 +3,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'tpope/vim-vinegar'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
