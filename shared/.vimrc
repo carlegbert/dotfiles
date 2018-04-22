@@ -38,7 +38,7 @@ set nofoldenable
 set foldlevel=1
 
 """ search
-set hlsearch 
+set hlsearch
 set incsearch
 set wrapscan
 set ignorecase
