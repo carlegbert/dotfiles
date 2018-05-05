@@ -21,7 +21,7 @@ def mklink(src, dest):
         return
     if args.verbose:
         print('Creating link to %s at %s' % (src, dest))
-    if os.path.exists(dest):
+    if os.path.lexists(dest):
         os.remove(dest)
     os.symlink(src, dest)
 
