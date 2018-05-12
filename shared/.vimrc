@@ -63,6 +63,7 @@ set scrolloff=10
 set sidescrolloff=10
 set nowrap
 set noswapfile
+set showmatch
 
 """ aliases and mappings
 

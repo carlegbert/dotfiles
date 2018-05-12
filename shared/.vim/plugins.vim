@@ -16,6 +16,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nvie/vim-flake8'
+Plug 'alvan/vim-closetag'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
