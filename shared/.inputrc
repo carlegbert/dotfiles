@@ -1,3 +1,5 @@
+$include /etc/inputrc
+
 set completion-ignore-case on
 set colored-completion-prefix on
 set editing-mode vi

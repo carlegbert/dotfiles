@@ -1,5 +1,6 @@
 filetype plugin indent on
 syntax enable
+set t_Co=256
 set background=dark
 
 set omnifunc=syntaxcomplete#Complete

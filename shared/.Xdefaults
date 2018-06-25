@@ -1,0 +1,15 @@
+urxvt.termName: rxvt-unicode
+urxvt.background: black
+urxvt.foreground: gray
+
+urxvt.font: xft:Hack:pixelsize=13
+
+!! scrollbar
+urxvt.scrollBar_right: true
+urxvt.scrollstyle: plain
+urxvt*scrollWithBuffer: true
+urxvt*scrollTtyKeypress: true
+
+urxvt.saveLines: 100000
+urxvt.urlLauncher: /usr/bin/firefox
+urxvt.matcher.button: C1
