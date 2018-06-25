@@ -16,7 +16,7 @@ shopt -s checkwinsize
 source /usr/share/bash-completion/completions/git
 
 # PS1 settings
-PS1_PROMPT="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W"
+PS1_PROMPT="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w"
 PS1_SYMBOL="\[\033[01;30m\]\$\[\033[00m\] "
 
 if [ -f ~/.scripts/git-prompt.sh ]; then
