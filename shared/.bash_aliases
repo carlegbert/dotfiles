@@ -18,6 +18,7 @@ alias mkdir='mkdir -pv'
 alias ports='netstat -tuvanp'
 alias cp='cp -iv'
 alias e='vim'
+alias esudo='sudo -E vim'
 
 # xclip aliases
 alias setclip='xclip -selection c'
