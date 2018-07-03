@@ -12,16 +12,15 @@ set expandtab
 if (!empty(glob("$HOME/.vim/autoload/plug.vim")))
     source $HOME/.vim/plugins.vim
     source $HOME/.vim/pluginsettings.vim
-    source $HOME/.vim/syntasticsettings.vim
     colorscheme gruvbox
     let g:airline_theme="gruvbox"
 endif
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
-if (!has('nvim'))
-     let &t_SI = "\<Esc>[6 q"
-     let &t_SR = "\<Esc>[4 q"
-     let &t_EI = "\<Esc>[2 q"
+if (has('autocmd'))
+    let &t_SI = "\033[5 q"
+    let &t_SR = "\033[1 q"
+    let &t_EI = "\033[1 q"
 endif
 
 autocmd Filetype html setlocal  sts=2 sw=2
@@ -54,6 +53,8 @@ set wildmenu
 set showcmd
 
 """ misc
+set signcolumn=yes
+set fillchars+=vert:\ 
 set number
 set cursorline
 set title
