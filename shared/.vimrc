@@ -11,7 +11,6 @@ set expandtab
 if (!empty(glob("$HOME/.vim/autoload/plug.vim")))
     source $HOME/.vim/plugins.vim
     source $HOME/.vim/pluginsettings.vim
-    source $HOME/.vim/syntasticsettings.vim
     colorscheme gruvbox
     let g:airline_theme="gruvbox"
 endif
@@ -53,6 +52,8 @@ set wildmenu
 set showcmd
 
 """ misc
+set signcolumn=yes
+set fillchars+=vert:\ 
 set number
 set cursorline
 set title
