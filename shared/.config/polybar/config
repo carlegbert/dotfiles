@@ -102,7 +102,7 @@ label-warn = %temperature%
 label-warn-foreground = ${colors.red}
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <label-volume>
 format-underline = ${colors.lightgrey}
