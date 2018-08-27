@@ -11,7 +11,6 @@ set expandtab
 
 if (!empty(glob("$HOME/.vim/autoload/plug.vim")))
     source $HOME/.vim/plugins.vim
-    source $HOME/.vim/pluginsettings.vim
     colorscheme gruvbox
     let g:airline_theme="gruvbox"
 endif
@@ -37,12 +36,13 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
-""" search
+""" search/replace
 set hlsearch
 set incsearch
 set wrapscan
 set ignorecase
 set smartcase
+set gdefault
 
 """ split settings
 set splitright
@@ -54,7 +54,7 @@ set showcmd
 
 """ misc
 set signcolumn=yes
-set fillchars+=vert:\ 
+set fillchars+=vert:\█
 set number
 set cursorline
 set title
@@ -82,16 +82,16 @@ cnoreabbrev Wqall wqall
 " space is leader
 let mapleader = "\<Space>"
 
-nnoremap <silent><leader><leader>w :w<CR>
-nnoremap <silent><leader><leader>q :q<CR>
+nnoremap <silent><leader>w :w<CR>
+nnoremap <silent><leader>q :q<CR>
 
-" space-space-][ to cycle through buffers
-nnoremap <silent><leader><leader>] :bnext<CR>
-nnoremap <silent><leader><leader>[ :bprev<CR>
-" space-space-del to delete buffer
-nnoremap <silent><leader><leader>d :bdelete<CR>
+" space-][ to cycle through buffers
+nnoremap <silent><leader>] :bnext<CR>
+nnoremap <silent><leader>[ :bprev<CR>
+" space-del to delete buffer
+nnoremap <silent><leader>d :bdelete<CR>
 " space-b to list buffers and prompt for numbered selection
-nnoremap <silent><leader>b :ls<CR>:b<space>
+nnoremap <silent>b :ls<CR>:b<space>
 
 " space-w instead of ctrl-w
 nnoremap <leader>w <C-w>
@@ -114,10 +114,14 @@ inoremap jk <Esc>
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>j
 
-" hide search results with space-n
-nnoremap <leader>s /
+" find/replace with leader+r
 nnoremap <leader>r :%s/
+
+" hide search results with space-n
 nnoremap <silent><leader>n :nohlsearch<Enter>
+
+" leader+s to save
+nnoremap <leader>s  :w<CR>
 
 " space-# to toggle number/relativenumber
 function! NumberToggle()

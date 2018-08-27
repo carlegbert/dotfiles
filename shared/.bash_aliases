@@ -19,6 +19,7 @@ alias ports='netstat -tuvanp'
 alias cp='cp -iv'
 alias e='vim'
 alias esudo='sudo -E vim'
+alias mktempd='cd $(mktemp -d)'
 
 # xclip aliases
 alias setclip='xclip -selection c'
