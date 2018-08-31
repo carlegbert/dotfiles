@@ -123,6 +123,12 @@ nnoremap <silent><leader>n :nohlsearch<Enter>
 " leader+s to save
 nnoremap <leader>s  :w<CR>
 
+" set some marks when moving around document
+nnoremap / ml/
+nnoremap ? ml?
+nnoremap gg mlgg
+nnoremap G mlG
+
 " space-# to toggle number/relativenumber
 function! NumberToggle()
     if(&relativenumber == 1)
