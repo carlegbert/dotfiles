@@ -28,18 +28,17 @@
 
 [core]
     excludesfile = ~/.gitignore_global
-    editor = vim
-#   *nix/osx
+    editor = $EDITOR
     autocrlf = input
-#   windows :(
-#    autocrlf = true
 
 [alias]
     cm = commit -m
-    addp = add -p
+    st = status
+    co = checkout
+    ap = add -p
     cb = checkout -b
-    amend = commit --amend --no-edit
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+    amend = commit --amend --no-edit
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     idiff = diff --word-diff=plain
     cleanup = !git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d

@@ -1,37 +1,22 @@
 #!/usr/bin/python3
 
-import argparse
 import os
+import sys
 
 
 HOME = os.environ['HOME']
 CWD = os.getcwd()
-SHARED = os.path.join(CWD, 'shared')
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--source')
-parser.add_argument('--verbose', action='store_true')
-parser.add_argument('--dry', action='store_true')
-args = parser.parse_args()
 
 
 def mklink(src, dest):
-    if args.dry:
-        print('Would make link to %s at %s' % (src, dest))
-        return
-    if args.verbose:
-        print('Creating link to %s at %s' % (src, dest))
+    print('Creating link to %s at %s' % (src, dest))
     if os.path.lexists(dest):
         os.remove(dest)
     os.symlink(src, dest)
 
 
 def mkdir(dest):
-    if args.dry:
-        print('Would create directory %s' % dest)
-        return
-    if args.verbose:
-        print('Creating directory %s' % dest)
+    print('Creating directory %s' % dest)
     os.mkdir(dest)
 
 
@@ -39,17 +24,17 @@ def mklinks(src, dest):
     if not os.path.exists(dest):
         mkdir(dest)
 
-    if args.verbose:
-        print('Making links for directory %s' % src)
     for filename in os.listdir(src):
-        fullpath = os.path.join(src, filename)
-        target = os.path.join(dest, filename)
-        if os.path.isdir(fullpath):
-            mklinks(fullpath, target)
+        linksrc = os.path.join(src, filename)
+        linkdest = os.path.join(dest, filename)
+        if os.path.isdir(linksrc):
+            mklinks(linksrc, linkdest)
         else:
-            mklink(fullpath, target)
+            mklink(linksrc, linkdest)
+
 
 if __name__ == '__main__':
-    mklinks(SHARED, HOME)
-    if args.source:
-        mklinks(os.path.join(CWD, args.source), HOME)
+    targets = sys.argv[1:]
+    for target in targets:
+        print('... linking files in %s...' % (target))
+        mklinks(os.path.join(CWD, target), HOME)

@@ -14,9 +14,13 @@ super + t
 super + b
     google-chrome
 
+# disable touchpad
+alt + t
+    bash $HOME/.scripts/toggletouchpad.sh
+
 # program launcher
 super + space
-    dmenu_run -fn 'Inconsolata-14'
+    dmenu_run -fn "$DMENU_FONT"
 
 # make sxhkd reload its configuration files:
 super + Escape

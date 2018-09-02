@@ -91,7 +91,7 @@ nnoremap <silent><leader>[ :bprev<CR>
 " space-del to delete buffer
 nnoremap <silent><leader>d :bdelete<CR>
 " space-b to list buffers and prompt for numbered selection
-nnoremap <silent>b :ls<CR>:b<space>
+nnoremap <leader><silent>b :ls<CR>:b<space>
 
 " space-w instead of ctrl-w
 nnoremap <leader>w <C-w>
