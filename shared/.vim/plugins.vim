@@ -1,4 +1,8 @@
-""" load plugins with vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
+endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -11,13 +15,17 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
-Plug 'shougo/deoplete.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+Plug 'zchee/deoplete-jedi'
+Plug 'shougo/neco-vim'
+Plug 'shougo/neco-syntax'
+
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nvie/vim-flake8'
 Plug 'alvan/vim-closetag'
-Plug 'Quramy/tsuquyomi'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
@@ -30,7 +38,6 @@ let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
 
 """ nerdcommenter settings
 let g:NERDSpaceDelims = 1

@@ -16,33 +16,33 @@ shopt -s checkwinsize
 source /usr/share/bash-completion/completions/git
 
 # PS1 settings
-PS1_PROMPT="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w"
-PS1_SYMBOL="\[\033[01;30m\]\$\[\033[00m\] "
+PS1_PROMPT="\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w"
+PS1_SYMBOL="\\[\\033[01;30m\\]\\$\\[\\033[00m\\] "
 
 if [ -f ~/.scripts/git-prompt.sh ]; then
-  source ~/.scripts/git-prompt.sh
-  GIT_PS1_SHOWDIRTYSTATE=1
-  GIT_PS1_SHOWSTASHSTATE=1
-  GIT_PS1_SHOWUNTRACKEDFILES=1
-  GIT_PS1_SHOWCOLORHINTS=1
-  GIT_PS1_SHOWUPSTREAM="verbose"
-  GIT_PS1_DESCRIBE_STYLE="contains"
-  PROMPT_COMMAND='__git_ps1 "$PS1_PROMPT\[\033[00m\]" "$PS1_SYMBOL"'
+  source "$HOME/.scripts/git-prompt.sh"
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  export GIT_PS1_SHOWSTASHSTATE=1
+  export GIT_PS1_SHOWUNTRACKEDFILES=1
+  export GIT_PS1_SHOWCOLORHINTS=1
+  export GIT_PS1_SHOWUPSTREAM="verbose"
+  export GIT_PS1_DESCRIBE_STYLE="contains"
+  export PROMPT_COMMAND='__git_ps1 "$PS1_PROMPT\\[\\033[00m\\]" "$PS1_SYMBOL"'
 else
   PS1='"$PS1_PROMPT""$PS1_SYMBOL"'
 fi
 
 # Alias + script definitions
 if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+  source "$HOME/.bash_aliases"
 fi
 
 if [ -f ~/.bash_scripts ]; then
-  . ~/.bash_scripts
+  source "$HOME/.bash_scripts"
 fi
 
 # editor settings
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # misc variables

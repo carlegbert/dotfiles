@@ -17,8 +17,8 @@ alias l='ls -CF'
 alias mkdir='mkdir -pv'
 alias ports='netstat -tuvanp'
 alias cp='cp -iv'
-alias e='vim'
-alias esudo='sudo -E vim'
+alias e='"$EDITOR"'
+alias esudo='sudo -E "$EDITOR"'
 alias mktempd='cd $(mktemp -d)'
 
 # xclip aliases
