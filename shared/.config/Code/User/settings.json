@@ -1,0 +1,40 @@
+{
+  "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "files.exclude": {
+    ".vscode/": true,
+    "mypy_cache/": true
+  },
+  // "python.pythonPath": "${workspaceFolder}/bin/python",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.pep8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.mypyPath": "/home/cegbert/.local/bin/mypy",
+  "python.linting.mypyArgs": [
+    // we'll be playing with these two to see which one works best
+    "--quick-and-dirty"
+    // "--incremental"
+  ],
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/home/cegbert/.local/bin/black",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.rulers": [
+      88
+    ]
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    ".envrc": "shellscript",
+    "*.ract": "handlebars"
+  }
+}

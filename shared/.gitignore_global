@@ -15,3 +15,6 @@ tags
 #python
 *.pyc
 venv/
+
+# https://direnv.net/
+.envrc
