@@ -26,6 +26,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nvie/vim-flake8'
 Plug 'alvan/vim-closetag'
+Plug 'ambv/black'
+Plug 'prettier/vim-prettier'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
@@ -62,3 +64,6 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 """ vim-javascript settings
 let g:javascript_plugin_jsdoc = 1
+
+""" black.vim settings
+autocmd BufWritePre *.py execute ':Black'
