@@ -8,30 +8,34 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
+Plug 'sjl/tslime.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 Plug 'zchee/deoplete-jedi'
 Plug 'shougo/neco-vim'
 Plug 'shougo/neco-syntax'
+" TODO: good js autocompletion
+
+Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nvie/vim-flake8'
-Plug 'alvan/vim-closetag'
 Plug 'ambv/black'
 Plug 'prettier/vim-prettier'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive' " TODO: learn how to use this
+
+" rainbow parens for lisp
+Plug 'amdt/vim-niji'
 
 call plug#end()
 
@@ -67,3 +71,9 @@ let g:javascript_plugin_jsdoc = 1
 
 """ black.vim settings
 autocmd BufWritePre *.py execute ':Black'
+
+""" tslime
+let g:tslime_normal_mapping = '<leader>t'
+let g:tslime_visual_mapping = '<leader>t'
+let g:tslime_vars_mapping = '<leader>T'
+let g:tslime_ensure_trailing_newlines = 1

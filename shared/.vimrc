@@ -132,3 +132,7 @@ function! NumberToggle()
     endif
 endfunc
 nnoremap <silent><leader># :call NumberToggle()<CR>
+
+if (!empty(glob('~/.scripts/scmindent.rkt')))
+    autocmd filetype lisp,scheme,art setlocal equalprg="~/.scripts/scmindent.rkt"
+endif

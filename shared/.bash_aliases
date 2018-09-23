@@ -42,3 +42,6 @@ fi
 
 # hack for virtualenv pip freeze bug
 alias pipfreeze='pip freeze | grep -v "pkg-resources"'
+
+# racket repl for SICP exercises
+alias sicp='racket -i -p neil/sicp -l xrepl'
