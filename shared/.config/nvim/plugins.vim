@@ -38,6 +38,8 @@ call plug#end()
 """ ALE settings
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
+let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier']}
+let g:ale_echo_msg_format = '[%linter%]  %s'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
@@ -65,5 +67,12 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 """ vim-javascript settings
 let g:javascript_plugin_jsdoc = 1
 
-""" black.vim settings
+""" prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx execute ':PrettierAsync'
+
+""" black
 autocmd BufWritePre *.py execute ':Black'
+
+""" closetag
+let g:closetag_filenames = '*.html,*.ract'

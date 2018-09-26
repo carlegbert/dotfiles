@@ -27,6 +27,9 @@
       88
     ]
   },
+  "[html]": {
+    "editor.tabSize": 2
+  },
   "[javascript]": {
     "editor.formatOnSave": true
   },
@@ -36,5 +39,12 @@
   "files.associations": {
     ".envrc": "shellscript",
     "*.ract": "handlebars"
-  }
+  },
+  "window.zoomLevel": -1,
+  "vim.insertModeKeyBindings": [
+    {
+        "before": ["j", "k"],
+        "after": ["<esc>"]
+    }
+]
 }

@@ -132,3 +132,6 @@ function! NumberToggle()
     endif
 endfunc
 nnoremap <silent><leader># :call NumberToggle()<CR>
+
+" .ract files use mustache syntax highlighting
+autocmd BufNewFile,BufRead *.ract set filetype=mustache

@@ -1,6 +1,3 @@
-# cat this file
-alias aliases='cat ~/.bash_aliases'
-
 # laziness aliases
 alias ..='_..' # see ~/.bash_scripts
 alias ...='_.. 2'
@@ -19,7 +16,7 @@ alias ports='netstat -tuvanp'
 alias cp='cp -iv'
 alias e='"$EDITOR"'
 alias esudo='sudo -E "$EDITOR"'
-alias mktempd='cd $(mktemp -d)'
+alias tempdir='cd $(mktemp -d)'
 
 # xclip aliases
 alias setclip='xclip -selection c'
