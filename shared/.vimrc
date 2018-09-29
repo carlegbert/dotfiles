@@ -135,3 +135,7 @@ nnoremap <silent><leader># :call NumberToggle()<CR>
 
 " .ract files use mustache syntax highlighting
 autocmd BufNewFile,BufRead *.ract set filetype=mustache
+
+if (!empty(glob('~/.scripts/scmindent.rkt')))
+    autocmd filetype lisp,scheme,art setlocal equalprg="~/.scripts/scmindent.rkt"
+endif
