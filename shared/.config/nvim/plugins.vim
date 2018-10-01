@@ -24,6 +24,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 Plug 'w0rp/ale'
+
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nvie/vim-flake8'
