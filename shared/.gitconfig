@@ -42,6 +42,7 @@
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     idiff = diff --word-diff=plain
     cleanup = !git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
+    pushu = push origin -u HEAD
 
 [grep]
     break = true
