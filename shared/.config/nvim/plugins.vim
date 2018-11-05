@@ -32,7 +32,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nvie/vim-flake8'
 Plug 'ambv/black'
 Plug 'prettier/vim-prettier'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'

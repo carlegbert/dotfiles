@@ -15,6 +15,9 @@ tags
 #python
 *.pyc
 venv/
+lib64
+mypy.log
+pip-selfcheck.json
 
 # https://direnv.net/
 .envrc
