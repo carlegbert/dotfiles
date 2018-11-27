@@ -4,14 +4,25 @@
   "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.renderWhitespace": "boundary",
   "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "diffEditor.renderSideBySide": true,
+  "workbench.colorTheme": "One Monokai",
   "files.exclude": {
-    "mypy_cache/": true
+    "mypy_cache/": true,
+    "*.pyc": true,
+    ".browserify-cache/": true,
   },
-  // "python.pythonPath": "${workspaceFolder}/bin/python",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.rulers": [
+      88
+    ],
+  },
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "/home/cegbert/.local/bin/flake8",
   "python.linting.pep8Enabled": true,
+  "python.linting.pep8Path": "/home/cegbert/.local/bin/pep8",
   "python.linting.mypyEnabled": true,
   "python.linting.mypyPath": "/home/cegbert/.local/bin/mypy",
   "python.linting.mypyArgs": [
@@ -19,15 +30,9 @@
     "--quick-and-dirty"
     // "--incremental"
   ],
+  "python.linting.pylintPath": "/home/cegbert/.local/bin/pylint",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/home/cegbert/.local/bin/black",
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4,
-    "editor.rulers": [
-      88
-    ]
-  },
   "[html]": {
     "editor.tabSize": 2
   },
@@ -48,5 +53,10 @@
         "after": ["<esc>"]
     }
   ],
-  "diffEditor.renderSideBySide": true
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<esc>"],
+      "after": [":nohlsearch<enter>"]
+    }
+  ]
 }

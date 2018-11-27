@@ -133,8 +133,8 @@ function! NumberToggle()
 endfunc
 nnoremap <silent><leader># :call NumberToggle()<CR>
 
-" .ract files use mustache syntax highlighting
 autocmd BufNewFile,BufRead *.ract set filetype=mustache
+autocmd BufNewFile,BufRead .envrc set syntax=sh
 
 if (!empty(glob('~/.scripts/scmindent.rkt')))
     autocmd filetype lisp,scheme,art setlocal equalprg="~/.scripts/scmindent.rkt"
