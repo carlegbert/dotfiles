@@ -44,6 +44,7 @@
     idiff = diff --word-diff=plain
     cleanup = !git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
     pushu = push origin -u HEAD
+    cm-empty = commit --allow-empty -m "empty commit"
 
 [grep]
     break = true
