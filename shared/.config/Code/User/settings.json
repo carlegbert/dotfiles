@@ -7,9 +7,11 @@
   "diffEditor.renderSideBySide": true,
   "workbench.colorTheme": "One Monokai",
   "files.exclude": {
-    "mypy_cache/": true,
-    "*.pyc": true,
+    ".mypy_cache/": true,
+    "**/*.pyc": true,
     ".browserify-cache/": true,
+    "pip-selfcheck.json": true,
+    "**/*/__pycache__/": true,
   },
   "[python]": {
     "editor.formatOnSave": true,
