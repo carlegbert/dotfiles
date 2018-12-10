@@ -75,9 +75,6 @@ cnoreabbrev Wqall wqall
 " space is leader
 let mapleader = "\<Space>"
 
-nnoremap <silent><leader>w :w<CR>
-nnoremap <silent><leader>q :q<CR>
-
 " space-][ to cycle through buffers
 nnoremap <silent><leader>] :bnext<CR>
 nnoremap <silent><leader>[ :bprev<CR>
@@ -88,6 +85,11 @@ nnoremap <leader><silent>b :ls<CR>:b<space>
 
 " space-w instead of ctrl-w
 nnoremap <leader>w <C-w>
+" quick navigation between splits
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 " tab -> % in normal/visual mode
 nnoremap <tab> %

@@ -90,7 +90,7 @@ warn-temperature = 60
 format = <ramp><label>
 format-margin = 1
 format-underline = ${colors.lightgrey}
-label = %temperature%
+label = %temperature-c%
 ramp-0 = ""
 ramp-1 = ""
 ramp-2 = ""
@@ -98,7 +98,7 @@ ramp-3 = ""
 
 format-warn = <label-warn>
 format-warn-underline = ${colors.red}
-label-warn = %temperature%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.red}
 
 [module/volume]

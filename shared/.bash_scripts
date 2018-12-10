@@ -7,7 +7,7 @@ function _..() {
   fi
 
   re='^[0-9]+$'
-  if ! [[ $1 =~ $re  ]] ; then
+  if ! [[ $1 =~ $re  ]]; then
     echo "error: Not a number" >&2;
     return 1;
   fi
@@ -30,12 +30,12 @@ function setvol() {
   fi
 
   re='^[0-9]+$'
-  if ! [[ $1 =~ $re  ]] ; then
+  if ! [[ $1 =~ $re  ]]; then
     echo "error: Not a number" >&2;
     return 1;
   fi
 
-  amixer -D pulse sset Master "$1%" > /dev/null;
+  amixer sset Master "$1%" > /dev/null;
   echo "Volume set to $1";
   return 0;
 }
