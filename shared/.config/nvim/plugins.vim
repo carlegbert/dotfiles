@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/denite.nvim'
 Plug 'zchee/deoplete-jedi'
 Plug 'shougo/neco-vim'
 Plug 'shougo/neco-syntax'
@@ -26,7 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
+Plug 'mhartington/nvim-typescript'
 Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nvie/vim-flake8'
@@ -57,6 +58,8 @@ let g:NERDCompactSexyComs = 1 " lol
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+nnoremap <C-/> NERDComToggleComment
+vnoremap <C-/> NERDComToggleComment
 
 """ vim-gitgutter settings
 nnoremap <F9> :GitGutterToggle<CR>

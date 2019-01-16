@@ -18,6 +18,7 @@ alias e='"$EDITOR"'
 alias esudo='sudo -E "$EDITOR"'
 alias tempdir='cd $(mktemp -d)'
 alias doco="docker-compose"
+alias ku="kubectl"
 
 # xclip aliases
 alias setclip='xclip -selection c'
