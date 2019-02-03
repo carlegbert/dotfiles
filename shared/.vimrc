@@ -112,11 +112,11 @@ nnoremap <leader>O O<Esc>j
 " find/replace with leader+r
 nnoremap <leader>r :%s/
 
+" leader+s to search/replace word under cursor
+nnoremap <leader>s  :%s/\<<C-r><C-w>\>/
+
 " hide search results with space-n
 nnoremap <silent><leader>n :nohlsearch<Enter>
-
-" leader+s to save
-nnoremap <leader>s  :w<CR>
 
 " set some marks when moving around document
 nnoremap / ml/

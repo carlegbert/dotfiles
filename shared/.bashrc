@@ -55,3 +55,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f /usr/bin/direnv ] && eval "$(direnv hook bash)"
+
+# most for paging
+if type most &> /dev/null; then
+  export PAGER="most"
+fi
