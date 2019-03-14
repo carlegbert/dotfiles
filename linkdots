@@ -9,9 +9,12 @@ CWD = os.getcwd()
 
 
 def mklink(src, dest):
-    print('Creating link to %s at %s' % (src, dest))
+    if os.path.realpath(dest) == src:
+        return
     if os.path.lexists(dest):
+        print('File exists at %s... removing!' % dest)
         os.remove(dest)
+    print('Creating link to %s at %s' % (src, dest))
     os.symlink(src, dest)
 
 

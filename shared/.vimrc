@@ -5,20 +5,17 @@ set background=dark
 
 colorscheme murphy
 
-set omnifunc=syntaxcomplete#Complete
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+
+" bar cursor in insert
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
-
-autocmd Filetype css setlocal sts=2 sw=2
-autocmd Filetype json setlocal sts=2 sw=2
-autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 
 """ indentation settings
 set smartindent
@@ -35,7 +32,7 @@ set incsearch
 set wrapscan
 set ignorecase
 set smartcase
-set gdefault
+let g:ackprg = 'ag --vimgrep'
 
 """ split settings
 set splitright
@@ -81,15 +78,10 @@ nnoremap <silent><leader>[ :bprev<CR>
 " space-del to delete buffer
 nnoremap <silent><leader>d :bdelete<CR>
 " space-b to list buffers and prompt for numbered selection
-nnoremap <leader><silent>b :ls<CR>:b<space>
+nnoremap <silent><leader>b :ls<CR>:b<space>
 
 " space-w instead of ctrl-w
 nnoremap <leader>w <C-w>
-" quick navigation between splits
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
 
 " tab -> % in normal/visual mode
 nnoremap <tab> %
@@ -99,15 +91,8 @@ vnoremap <tab> %
 nnoremap H ^
 nnoremap L $
 
-" shift+tab to unindent
-inoremap <S-tab> <C-d>
-
 " jk to leave insert
 inoremap jk <Esc>
-
-" leader+o leader+O to insert newline in normal mode
-nnoremap <leader>o o<Esc>
-nnoremap <leader>O O<Esc>j
 
 " find/replace with leader+r
 nnoremap <leader>r :%s/

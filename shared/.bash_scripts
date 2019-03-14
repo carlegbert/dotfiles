@@ -58,15 +58,3 @@ dcleanup() {
   docker rmi "$(docker images --filter dangling=true -q 2>/dev/null)"
   docker volume rm "$(docker volume ls -qf danging=true 2>/dev/null)"
 }
-
-function gpp() {
-  fname="$1.cpp"
-  if [ -e "$fname" ]; then
-    (
-      set -x
-      g++ "$fname" -o "$1"
-    )
-  else
-    >&2 echo "$fname does not exist"
-  fi
-}
