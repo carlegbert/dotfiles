@@ -9,6 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+exec --no-startup-id xrandr --output HDMI-1 --auto --right-of eDP-1
+exec --no-startup-id feh --bg-fill --no-fehbg $HOME/Pictures/Buzz.png
+
 set $mod Mod4
 set $alt Mod1
 
@@ -43,7 +46,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # lock
-bindsym $mod+$alt+l exec i3lock -i=$HOME/Pictures/buzz.png -e -f -t
+bindsym $mod+$alt+l exec i3lock -i $HOME/Pictures/Buzz.png -e -f -t
 
 # browser
 bindsym $mod+b exec google-chrome
@@ -59,10 +62,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -83,10 +86,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle

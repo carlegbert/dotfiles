@@ -1,12 +1,11 @@
 {
   "editor.acceptSuggestionOnEnter": "off",
   "editor.suggestOnTriggerCharacters": false,
-  "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'Fira Code', 'Hack', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
   "editor.minimap.enabled": false,
   "diffEditor.renderSideBySide": true,
-  "workbench.colorTheme": "One Monokai",
   "files.exclude": {
     ".mypy_cache/": true,
     "**/*.pyc": true,
@@ -45,15 +44,12 @@
   "[html]": {
     "editor.tabSize": 2
   },
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
   "[typescript]": {
     "editor.formatOnSave": true
   },
   "files.associations": {
     ".envrc": "shellscript",
-    // "*.ract": "handlebars"
+    "*.ract": "handlebars"
   },
   "window.zoomLevel": 0,
   "vim.insertModeKeyBindings": [
@@ -65,7 +61,11 @@
   "vim.normalModeKeyBindings": [
     {
       "before": ["<esc>"],
-      "after": [":nohlsearch<enter>"]
+      "after": [":nohlsearch<enter>"],
     }
-  ]
+  ],
+  "workbench.colorTheme": "One Monokai",
+  "python.jediEnabled": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
