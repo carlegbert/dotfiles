@@ -12,6 +12,8 @@ set expandtab
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
+set wildignore=.git,.mypy_cache,node_modules,.browserify-cache
+
 " bar cursor in insert
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
@@ -68,6 +70,8 @@ cnoreabbrev Wall wall
 cnoreabbrev Qall qall
 cnoreabbrev Qall! qall
 cnoreabbrev Wqall wqall
+cnoreabbrev Vs vs
+cnoreabbrev Sp sp
 
 " space is leader
 let mapleader = "\<Space>"

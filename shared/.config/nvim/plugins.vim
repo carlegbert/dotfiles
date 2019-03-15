@@ -41,6 +41,7 @@ nnoremap <C-F> :Ack  *<Left><Left>
 
 
 """ FZF
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 nnoremap <C-p> :FZF<CR>
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
