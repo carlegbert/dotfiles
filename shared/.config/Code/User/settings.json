@@ -1,7 +1,7 @@
 {
   "editor.acceptSuggestionOnEnter": "off",
   "editor.suggestOnTriggerCharacters": false,
-  "editor.fontFamily": "'Fira Code', 'Hack', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'Inconsolata', 'Fira Code', 'Hack', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
   "editor.minimap.enabled": false,
