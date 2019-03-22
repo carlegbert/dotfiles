@@ -40,21 +40,18 @@ function setvol() {
   return 0;
 }
 
-function mkdirpy() {
-  if [ $# = 0 ]; then
-    echo "useage: mkdirpy <name>";
-    return 1;
-  fi
-
-  for arg in "$@"; do
-    mkdir "$arg";
-    touch "$arg/__init__.py";
-    echo "created $arg/__init__.py";
-  done
-}
-
-dcleanup() {
+function dcleanup() {
   docker rm -v "$(docker ps --filter status=exited -q 2> /dev/null)"
   docker rmi "$(docker images --filter dangling=true -q 2> /dev/null)"
   docker volume rm "$(docker volume ls -qf dangling=true 2> /dev/null)"
+}
+
+function i3lock-wall() {
+    WALLDIR="$HOME/Pictures/walls"
+    (
+        cd "$WALLDIR"
+        WALL=$(ls | sort -R | tail -1)
+        echo $WALL >> ~/wall.log
+        i3lock -i "$WALL" -e -f -t
+    )
 }

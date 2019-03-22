@@ -1,7 +1,7 @@
 {
   "editor.acceptSuggestionOnEnter": "off",
   "editor.suggestOnTriggerCharacters": false,
-  "editor.fontFamily": "'Inconsolata', 'Fira Code', 'Hack', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'Hack', 'Inconsolata', 'monospace', monospace",
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
   "editor.minimap.enabled": false,
@@ -34,9 +34,7 @@
   "python.linting.mypyEnabled": true,
   "python.linting.mypyPath": "/home/cegbert/.local/bin/mypy",
   "python.linting.mypyArgs": [
-    // we'll be playing with these two to see which one works best
     "--quick-and-dirty"
-    // "--incremental"
   ],
   "python.linting.pylintPath": "/home/cegbert/.local/bin/pylint",
   "python.formatting.provider": "black",
@@ -64,7 +62,7 @@
       "after": [":nohlsearch<enter>"],
     }
   ],
-  "workbench.colorTheme": "One Monokai",
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "python.jediEnabled": false,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
