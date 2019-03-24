@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+git add .
+git stash
+python linkdots.py unlink
+git pull
+python linkdots.py link
+git stash pop
