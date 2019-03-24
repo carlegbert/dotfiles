@@ -1,11 +1,17 @@
 import argparse
 import os
-from shutil import move
 
 
 HOME = os.environ['HOME']
 CWD = os.getcwd()
-IGNORE = ('.git', '.gitignore', '.mypy_cache', 'st.config.h', 'linkdots.py')
+IGNORE = (
+    '.git',
+    '.gitignore',
+    '.mypy_cache',
+    'st.config.h',
+    'linkdots.py',
+    'update',
+)
 
 
 parser = argparse.ArgumentParser()
@@ -57,6 +63,7 @@ def dryrun(src, dest):
         print("Would rm %s" % dest)
 
     print("would symlink %s to %s" % (src, dest))
+
 
 if __name__ == '__main__':
     fn_map = {

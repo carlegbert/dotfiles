@@ -18,6 +18,7 @@ venv/
 lib64
 mypy.log
 pip-selfcheck.json
+.mypy_cache/
 
 # https://direnv.net/
 .envrc
