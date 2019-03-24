@@ -2,20 +2,13 @@ import argparse
 import os
 
 
-HOME = os.environ['HOME']
+HOME = os.environ["HOME"]
 CWD = os.getcwd()
-IGNORE = (
-    '.git',
-    '.gitignore',
-    '.mypy_cache',
-    'st.config.h',
-    'linkdots.py',
-    'update',
-)
+IGNORE = (".git", ".gitignore", ".mypy_cache", "st.config.h", "linkdots.py", "update")
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('mode', choices=['link', 'unlink', 'dryrun'])
+parser.add_argument("mode", choices=["link", "unlink", "dryrun"])
 
 
 def iterdir(src, dest, fn, ignore=()):
@@ -65,12 +58,8 @@ def dryrun(src, dest):
     print("would symlink %s to %s" % (src, dest))
 
 
-if __name__ == '__main__':
-    fn_map = {
-        'link': mklink,
-        'unlink': unlink,
-        'dryrun': dryrun,
-    }
+if __name__ == "__main__":
+    fn_map = {"link": mklink, "unlink": unlink, "dryrun": dryrun}
     opts = parser.parse_args()
     fn = fn_map.get(opts.mode)
     iterdir(CWD, HOME, fn, IGNORE)

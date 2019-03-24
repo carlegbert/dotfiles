@@ -47,6 +47,8 @@ set showcmd
 """ misc
 set signcolumn=yes
 set fillchars+=vert:\█
+set listchars=tab:>-,trail:·
+set list
 set number
 set cursorline
 set title
@@ -58,6 +60,7 @@ set sidescrolloff=10
 set nowrap
 set noswapfile
 set showmatch
+match ErrorMsg '\s\+$'
 
 """ aliases and mappings
 
