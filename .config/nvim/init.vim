@@ -1,5 +1,7 @@
-source $HOME/.vimrc
+set runtimepath^=$HOME/.vim runtimepath+=$HOME/.vim/after
+let &packpath=&runtimepath
 
-source $XDG_CONFIG_HOME/nvim/plugins.vim
-colorscheme gruvbox
-let g:airline_theme="gruvbox"
+source $HOME/.vim/vimrc
+
+set exrc
+set secure

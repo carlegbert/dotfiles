@@ -6,6 +6,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'd': './install --all' }
 Plug 'mileszs/ack.vim'
+Plug 'jlanzarotta/bufexplorer'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive' " TODO: learn how to use this
@@ -34,6 +35,8 @@ Plug 'ambv/black'
 Plug 'prettier/vim-prettier'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+Plug 'janko-m/vim-test'
+
 call plug#end()
 
 """ ack.vim
@@ -57,6 +60,11 @@ let g:fzf_colors = {
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+""" BufExplorer
+nnoremap <silent>be :BufExplorer<CR>
+nnoremap <silent>bv :BufExplorerVerticalSplit<CR>
+nnoremap <silent>bh :BufExplorerHorizontalSplit<CR>
 
 """ ALE settings
 let g:ale_sign_error = '❌'

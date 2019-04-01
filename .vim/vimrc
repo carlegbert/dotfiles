@@ -3,7 +3,10 @@ syntax enable
 set t_Co=256
 set background=dark
 
-colorscheme murphy
+source $HOME/.vim/plugins.vim
+
+colorscheme gruvbox
+let g:airline_theme="gruvbox"
 
 set tabstop=4
 set softtabstop=4
@@ -14,10 +17,13 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 set wildignore=.git,.mypy_cache,node_modules,.browserify-cache
 
-" bar cursor in insert
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+if (has('nvim'))
+    set signcolumn=yes
+    " bar cursor in insert
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[4 q"
+    let &t_EI = "\<Esc>[2 q"
+endif
 
 """ indentation settings
 set smartindent
@@ -45,7 +51,6 @@ set wildmenu
 set showcmd
 
 """ misc
-set signcolumn=yes
 set fillchars+=vert:\█
 set listchars=tab:>-,trail:·
 set list
@@ -109,6 +114,9 @@ nnoremap <leader>s  :%s/\<<C-r><C-w>\>/
 
 " hide search results with space-n
 nnoremap <silent><leader>n :nohlsearch<Enter>
+
+" Make Y behave in sane way
+nnoremap Y y$
 
 " set some marks when moving around document
 nnoremap / ml/
