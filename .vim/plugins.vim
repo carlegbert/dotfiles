@@ -41,6 +41,7 @@ call plug#end()
 
 """ ack.vim
 nnoremap <C-F> :Ack  *<Left><Left>
+nnoremap <C-D> :Ack <cword> *<CR>
 
 
 """ FZF

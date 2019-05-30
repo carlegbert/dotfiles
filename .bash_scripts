@@ -55,3 +55,8 @@ function i3lock-wall() {
         i3lock -i "$WALL" -e -f -t
     )
 }
+
+function ec() {
+    cp "$1" "$2"
+    "$EDITOR" "$2"
+}
