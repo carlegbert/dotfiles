@@ -22,18 +22,20 @@ Plug 'amdt/vim-niji'
 
 Plug 'sjl/tslime.vim'
 
-" completion/syntax/linting
-Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'shougo/neco-vim'
-Plug 'shougo/neco-syntax'
-Plug 'sheerun/vim-polyglot'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'nvie/vim-flake8'
-Plug 'ambv/black'
-Plug 'prettier/vim-prettier'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+if (has('nvim'))
+    " completion/syntax/linting
+    Plug 'w0rp/ale'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'zchee/deoplete-jedi'
+    Plug 'shougo/neco-vim'
+    Plug 'shougo/neco-syntax'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'Glench/Vim-Jinja2-Syntax'
+    Plug 'nvie/vim-flake8'
+    Plug 'ambv/black'
+    Plug 'prettier/vim-prettier'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+endif
 
 Plug 'janko-m/vim-test'
 

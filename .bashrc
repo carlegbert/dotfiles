@@ -13,7 +13,7 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # git completion
-source /usr/share/bash-completion/completions/git
+[ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
 
 # PS1 settings
 PS1_PROMPT="\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w"
@@ -59,3 +59,5 @@ export NVM_DIR="$HOME/.nvm"
 if type most &> /dev/null; then
   export MANPAGER="most"
 fi
+
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
