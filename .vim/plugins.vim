@@ -22,8 +22,8 @@ Plug 'amdt/vim-niji'
 
 Plug 'sjl/tslime.vim'
 
+" async completion/syntax/linting
 if (has('nvim'))
-    " completion/syntax/linting
     Plug 'w0rp/ale'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-jedi'
@@ -37,14 +37,17 @@ if (has('nvim'))
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 endif
 
-Plug 'janko-m/vim-test'
+if (has('nvim-0.4'))
+    Plug 'rhysd/git-messenger.vim'
+endif
+
+" Plug 'janko-m/vim-test'
 
 call plug#end()
 
 """ ack.vim
 nnoremap <C-F> :Ack  *<Left><Left>
 nnoremap <C-D> :Ack <cword> *<CR>
-
 
 """ FZF
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
@@ -64,27 +67,15 @@ let g:fzf_colors = {
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-""" BufExplorer
-nnoremap <silent>be :BufExplorer<CR>
-nnoremap <silent>bv :BufExplorerVerticalSplit<CR>
-nnoremap <silent>bh :BufExplorerHorizontalSplit<CR>
-
-""" ALE settings
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
-let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier']}
-let g:ale_echo_msg_format = '[%linter%]  %s'
-nmap <silent><C-k> <Plug>(ale_previous_wrap)
-nmap <silent><C-j> <Plug>(ale_next_wrap)
-
 """ nerdcommenter settings
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1 " lol
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
-nnoremap <C-/> NERDComToggleComment
-vnoremap <C-/> NERDComToggleComment
+" this is how to map ctrl + / in vim
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 
 """ vim-gitgutter settings
 nnoremap <F9> :GitGutterToggle<CR>
@@ -100,14 +91,6 @@ let g:airline_powerline_fonts=1
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-""" prettier
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.yaml,*.json,*.css execute ':PrettierAsync'
-
-""" black
-let g:black_virtualenv = '~/.local/share/virtualenvs/black'
-autocmd BufWritePre *.py execute ':Black'
-
 """ closetag
 let g:closetag_filenames = '*.html,*.ract,*.jsx,*.tsx'
 
@@ -116,3 +99,22 @@ let g:tslime_normal_mapping = '<leader>t'
 let g:tslime_visual_mapping = '<leader>t'
 let g:tslime_vars_mapping = '<leader>T'
 let g:tslime_ensure_trailing_newlines = 1
+
+" async plugins
+if (has('nvim'))
+    """ ALE settings
+    let g:ale_sign_error = '❌'
+    let g:ale_sign_warning = '⚠️'
+    let g:ale_fixers = {'python': ['black'], 'javascript': ['prettier']}
+    let g:ale_echo_msg_format = '[%linter%]  %s'
+    nmap <silent><C-k> <Plug>(ale_previous_wrap)
+    nmap <silent><C-j> <Plug>(ale_next_wrap)
+
+    """ prettier
+    let g:prettier#autoformat = 0
+    autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.yaml,*.json,*.css execute ':PrettierAsync'
+
+    """ black
+    let g:black_virtualenv = '~/.local/share/virtualenvs/black'
+    autocmd BufWritePre *.py execute ':Black'
+endif

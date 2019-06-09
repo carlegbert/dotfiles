@@ -52,7 +52,7 @@ set showcmd
 
 """ misc
 set fillchars+=vert:\█
-set listchars=tab:>-,trail:·
+set listchars=tab:>\ ,trail:·
 set list
 set number
 set cursorline
@@ -87,10 +87,6 @@ let mapleader = "\<Space>"
 " space-][ to cycle through buffers
 nnoremap <silent><leader>] :bnext<CR>
 nnoremap <silent><leader>[ :bprev<CR>
-" space-del to delete buffer
-nnoremap <silent><leader>d :bdelete<CR>
-" space-b to list buffers and prompt for numbered selection
-nnoremap <silent><leader>b :ls<CR>:b<space>
 
 " space-w instead of ctrl-w
 nnoremap <leader>w <C-w>
@@ -103,8 +99,10 @@ vnoremap <tab> %
 nnoremap H ^
 nnoremap L $
 
-" jk to leave insert
+" jk is escape
 inoremap jk <Esc>
+vnoremap jk <Esc>
+cnoremap jk <Esc>
 
 " find/replace with leader+r
 nnoremap <leader>r :%s/
