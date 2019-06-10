@@ -8,7 +8,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'd': './install --all' }
 Plug 'mileszs/ack.vim'
 Plug 'jlanzarotta/bufexplorer'
 
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive' " TODO: learn how to use this
 
 Plug 'alvan/vim-closetag'
@@ -49,6 +49,17 @@ call plug#end()
 nnoremap <C-F> :Ack  *<Left><Left>
 nnoremap <C-D> :Ack <cword> *<CR>
 
+""" vim-signify
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_realtime = 1
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+let g:signify_sign_changedelete      = '!'
+nnoremap <leader>gl :SignifyToggleHighlight<CR>
+nnoremap <leader>gd :SignifyDiff<CR>
+
 """ FZF
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 nnoremap <C-p> :FZF<CR>
@@ -76,10 +87,6 @@ let g:NERDTrimTrailingWhitespace = 1
 " this is how to map ctrl + / in vim
 nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
-
-""" vim-gitgutter settings
-nnoremap <F9> :GitGutterToggle<CR>
-nnoremap <C-F9> :GitGutterLineHighlightsToggle<CR>
 
 """ airline settings
 let g:airline#extensions#tabline#enabled = 1

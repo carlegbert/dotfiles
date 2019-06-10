@@ -22,7 +22,7 @@
     remote = blue
 
 [color "diff"]
-    meta = yellow ul
+    meta = magenta ul
     frag = cyan ul
     old = red
     new = green
