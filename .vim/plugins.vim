@@ -9,6 +9,7 @@ Plug 'mileszs/ack.vim'
 Plug 'jlanzarotta/bufexplorer'
 
 Plug 'mhinz/vim-signify'
+Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive' " TODO: learn how to use this
 
 Plug 'alvan/vim-closetag'

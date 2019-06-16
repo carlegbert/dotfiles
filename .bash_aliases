@@ -35,3 +35,6 @@ alias pipfreeze='pip freeze | grep -v "pkg-resources"'
 
 # racket repl for SICP exercises
 alias sicp='racket -i -p neil/sicp -l xrepl'
+
+# open vim-magit buffer
+alias magit='"$EDITOR" -c MagitOnly'
