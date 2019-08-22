@@ -1,9 +1,10 @@
 [colors]
 
 black = #000
-darkgrey = #222
-lightgrey = #eee
-medgrey = #666
+darkgrey = #020303
+white = #eee
+medgrey = #151615
+teal = #23b196
 red = #0F0
 
 [bar/top]

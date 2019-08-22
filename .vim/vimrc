@@ -105,7 +105,6 @@ nnoremap L $
 
 " jk is escape
 inoremap jk <Esc>
-vnoremap jk <Esc>
 cnoremap jk <Esc>
 
 " find/replace with leader+r
