@@ -2,6 +2,8 @@
 #
 # script for toggling laptop touchpad
 
+set -e
+
 devicenum=$(xinput | grep Touchpad | awk '{print $6}' | sed 's/id=//')
 declare -i state
 state=$(xinput list-props "$devicenum" | grep 'Device Enabled' | awk '{print $4}')

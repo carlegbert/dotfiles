@@ -46,6 +46,7 @@
     ap = add -p
     cb = checkout -b
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+    rb = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --count=20
     last = log -1
     amend = commit --amend --no-edit
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD

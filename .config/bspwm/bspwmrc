@@ -1,13 +1,22 @@
-#!/bin/sh
+#!/bin/bash
+
+MONITOR_LIST=("$(xrandr --query | awk '/.* connected.*/ {print $1}')")
+NUM_MONITORS=${#MONITOR_LIST[@]}
+
+feh --randomize --bg-fill "$HOME/Pictures/walls/*.png"
+
+if [[ "$NUM_MONITORS" -eq 1 ]]; then
+    bspc monitor "${MONITOR_LIST[0]}" -d I II III IV V VI VII VIII IX X
+elif [[ "$NUM_MONITORS" -eq 2 ]]; then
+    bspc monitor "${MONITOR_LIST[0]}" -d I II III IV V
+    bspc monitor "${MONITOR_LIST[1]}" -d VI VII VIII IX X
+fi
 
 sxhkd &
 
-feh --randomize --bg-fill $HOME/Pictures/walls/*.png &
+echo "${MONITOR_LIST[@]}" >> bspc.log
 
-bash $HOME/.config/polybar/barlauncher &
-
-bspc monitor "$MON1" -d I II III IV V
-bspc monitor "$MON2" -d VI VII VIII IX X
+bash "$HOME/.config/polybar/barlauncher" &
 
 bspc config border_width         4
 bspc config window_gap           8

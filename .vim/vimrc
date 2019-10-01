@@ -5,9 +5,13 @@ set background=dark
 
 source $HOME/.vim/plugins.vim
 
-set termguicolors
-colorscheme gruvbox
-let g:airline_theme="gruvbox"
+" set termguicolors
+try
+    colorscheme gruvbox
+    let g:airline_theme="gruvbox"
+catch
+    colorscheme elflord
+endtry
 
 set tabstop=4
 set softtabstop=4
