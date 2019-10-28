@@ -43,17 +43,20 @@
     cm = commit -m
     st = status
     co = checkout
+    cl = checkout -
     ap = add -p
     cb = checkout -b
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
     rb = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --count=20
+    sloan = commit --no-verify -m
+    coma = checkout master
     last = log -1
     amend = commit --amend --no-edit
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     idiff = diff --word-diff=plain
     cleanup = !git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
     pushu = push origin -u HEAD
-    cm-empty = commit --allow-empty -m "empty commit"
+    cm-empty = commit -m \"empty commit\" --allow-empty
 
 [grep]
     break = true

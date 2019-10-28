@@ -120,10 +120,10 @@ if (has('nvim'))
     nmap <silent><C-j> <Plug>(ale_next_wrap)
 
     """ prettier
-    let g:prettier#autoformat = 0
-    autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.yaml,*.json,*.css execute ':PrettierAsync'
+    " let g:prettier#autoformat = 0
+    " autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.yaml,*.json,*.css execute ':PrettierAsync'
 
     """ black
-    let g:black_virtualenv = '~/.local/share/virtualenvs/black'
-    autocmd BufWritePre *.py execute ':Black'
+    " let g:black_virtualenv = '~/.local/share/virtualenvs/black'
+    " autocmd BufWritePre *.py execute ':Black'
 endif

@@ -2,7 +2,6 @@ $include /etc/inputrc
 
 set completion-ignore-case on
 set colored-completion-prefix on
-set editing-mode vi
 set colored-stats on
 set completion-map-case on
 set completion-prefix-display-length 20
