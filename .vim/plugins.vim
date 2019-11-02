@@ -11,6 +11,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'mhinz/vim-signify'
 Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive' " TODO: learn how to use this
+Plug 'tpope/vim-rhubarb'
 
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'

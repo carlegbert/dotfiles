@@ -5,6 +5,7 @@ set background=dark
 
 source $HOME/.vim/plugins.vim
 
+" set termguicolors
 try
     colorscheme gruvbox
     let g:airline_theme="gruvbox"

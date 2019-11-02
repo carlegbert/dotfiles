@@ -29,6 +29,9 @@ alias ku="kubectl"
 # xclip aliases
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
+alias clearclip='xclip -selection c < /dev/null'
+# random throwaway password
+alias randpass='openssl rand -base64 32 | setclip'
 
 # hack for virtualenv pip freeze bug
 alias pipfreeze='pip freeze | grep -v "pkg-resources"'
