@@ -5,7 +5,6 @@ set background=dark
 
 source $HOME/.vim/plugins.vim
 
-" set termguicolors
 try
     colorscheme gruvbox
     let g:airline_theme="gruvbox"
@@ -20,7 +19,7 @@ set expandtab
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
-set wildignore=.git,.mypy_cache,node_modules,.browserify-cache
+set wildignore=.git,.mypy_cache,node_modules,.browserify-cache,*.o,*.obj,*.pyc,__pycache,vgcore.*
 
 if (has('nvim'))
     set signcolumn=yes
@@ -57,7 +56,7 @@ set showcmd
 
 """ misc
 set fillchars+=vert:\█
-set listchars=tab:>\ ,trail:·
+set listchars=tab:»\ ,trail:·,extends:…,precedes:…
 set list
 set number
 set cursorline
@@ -93,20 +92,25 @@ let mapleader = "\<Space>"
 nnoremap <silent><leader>] :bnext<CR>
 nnoremap <silent><leader>[ :bprev<CR>
 
-" space-w instead of ctrl-w
-nnoremap <leader>w <C-w>
+" space-d to delete current buffer
+nnoremap <silent><leader>d :bdel<CR>
+
+" leader-hjkl to navigate between splits
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 " tab -> % in normal/visual mode
 nnoremap <tab> %
 vnoremap <tab> %
 
-" H and L -> ^ and $
-nnoremap H ^
-nnoremap L $
-
 " jk is escape
 inoremap jk <Esc>
 cnoremap jk <Esc>
+inoremap jK <Esc>
+cnoremap jK <Esc>
+vnoremap <leader>jk <Esc>
 
 " find/replace with leader+r
 nnoremap <leader>r :%s/

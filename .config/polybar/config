@@ -1,85 +1,89 @@
 [colors]
 
 black = #000
-darkgrey = #222
-lightgrey = #eee
-medgrey = #666
-red = #0F0
+darkgrey = #020303
+white = #ced
+medgrey = #151615
+teal = #56e4c9
+red = #F00
 
 [bar/top]
-
 monitor = ${env:MONITOR}
+
 width = 100%
-height = 24
+height = 20
 offset-x = 0
 offset-y = 0
 
 background = ${colors.darkgrey}
-foreground = ${colors.lightgrey}
+foreground = ${colors.teal}
 
-underline-size = 2
-underline-color = ${colors.lightgrey}
+spacing = 0
 
-spacing = 1
-padding-left = 0
+padding-left = 1
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Hack:pixelsize=11;2
-font-1 = FontAwesome:pixelsize=11;2
+font-0 = TamzenForPowerline:pixelsize=18;2
+font-1 = siji:pixelsize=19;1
 
-modules-left = bspwm cpu memory temperature
+underline-size = 2
+
+modules-left = bspwm sepl1 cpu sepl2 memory sepl1 temperature sepl2
 modules-center = xwindow
-modules-right = battery backlight volume wifi date
+modules-right = sepr2 volume sepr1 wifi sepr2 battery sepr1 backlight sepr2 date sepr1
 
 wm-restack = bspwm
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 
-; MODULES
+[module/sepl1]
+type = custom/text
+content = 
+content-foreground = ${colors.black}
+content-background = ${colors.teal}
+
+[module/sepl2]
+type = custom/text
+content = 
+content-foreground = ${colors.teal}
+content-background = ${colors.darkgrey}
+
+[module/sepr1]
+type = custom/text
+content = %{R}
+
+[module/sepr2]
+type = custom/text
+content = 
 
 [module/bspwm]
-
 type = internal/bspwm
 
 pin-workspaces = true
 
-label-focused = 
-label-focused-background = ${colors.black}
-label-focused-underline = ${colors.lightgrey}
-label-focused-padding = 1
+label-focused = 
+label-focused-underline = ${colors.teal}
+label-focused-foreground = ${colors.teal}
 
-label-occupied = 
-label-occupied-foreground = ${colors.medgrey}
-label-occupied-padding = 1
+label-occupied = 
 
-label-empty = 
-label-empty-foreground = ${colors.medgrey}
-label-empty-padding = 1
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:80:...%
-label-padding = 4
+label-empty = 
 
 [module/cpu]
 type = internal/cpu
 interval = 10
-format-prefix = " "
-format-prefix-foreground = ${colors.lightgrey}
-format-margin = 1
-format-underline = ${colors.lightgrey}
-label = %percentage%%
+format-prefix = "%{R} "
+format-suffix = "% "
+label = "%percentage:02%"
 
 [module/memory]
 type = internal/memory
 interval = 10
-format-prefix = " "
-format-prefix-foreground = ${colors.lightgrey}
-format-underline = ${colors.lightgrey}
+format-prefix = 
 format-margin = 1
-label = %percentage_used%%
+label = %percentage_used:02%%
 
 [module/temperature]
 type = internal/temperature
@@ -87,64 +91,18 @@ interval = 10
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp><label>
-format-margin = 1
-format-underline = ${colors.lightgrey}
-label = %temperature-c%
-ramp-0 = ""
-ramp-1 = ""
-ramp-2 = ""
-ramp-3 = ""
+format-prefix = "%{R} "
+label = "%temperature-c:02% "
 
-format-warn = <label-warn>
-format-warn-underline = ${colors.red}
-label-warn = %temperature-c%
+label-warn = %temperature-c:02%
+label-warn-prefix = "%{R} "
 label-warn-foreground = ${colors.red}
 
-[module/volume]
-type = internal/alsa
-
-format-volume = <label-volume>
-format-underline = ${colors.lightgrey}
-format-volume-margin = 1
-label-volume = " %percentage%"
-label-volume-underline = ${colors.lightgrey}
-
-label-muted-foreground = ${colors.medgrey}
-format-muted = <label-muted>
-format-muted-margin = 1
-label-muted = " --"
-label-muted-underline = ${colors.medgrey}
-
-[module/wifi]
-type = internal/network
-interface = ${env:WIFI_INTERFACE}
-interval = 10
-
-format-connected-prefix = " "
-format-connected = <label-connected>
-label-connected = %essid%
-format-connected-margin = 1
-format-connected-underline = ${colors.lightgrey}
-
-format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${colors.medgrey}
-label-disconnected = --
-label-disconnected-foreground = ${colors.medgrey}
-format-disconnected-margin = 1
-format-disconnected-underline = ${colors.medgrey}
-
-[module/date]
-type = internal/date
-
-interval = 1
-
-time = %I:%M %p
-date = %D
-label = %date% %time%
-format = <label>
-format-margin = 1
-format-underline = ${colors.lightgrey}
+[module/xwindow]
+type = internal/xwindow
+label-foreground = ${colors.white}
+label = %title:0:80:...%
+label-padding = 4
 
 [module/battery]
 type = internal/battery
@@ -154,37 +112,58 @@ battery = BAT0
 adapter = AC0
 poll-interval = 5
 
-format-charging = <animation-charging><label-charging>
-format-discharging = <ramp-capacity><label-discharging>
-format-full = <ramp-capacity><label-full>
-label-charging = %percentage%
-label-discharging = %percentage%
-label-full = %percentage%
-format-charging-padding = 1
-format-discharging-padding = 1
-format-full-padding = 1
-format-charging-underline = ${colors.lightgrey}
-format-discharging-underline = ${colors.lightgrey}
-format-full-underline = ${colors.lightgrey}
+format-charging = "%{R} <label-charging> "
+format-discharging = "%{R} <ramp-capacity><label-discharging> "
+format-full = "%{R} <ramp-capacity><label-full> "
+label-charging =  %percentage:02%%
+label-discharging = %percentage:02%%
+label-full = %percentage%%
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-0-foreground = ${colors.red}
 
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
 
 format = <label>
-label =  %percentage%%
-format-underline = ${colors.lightgrey}
+label = %percentage:02%%
 format-margin = 1
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <label-volume>
+label-volume = "%{R} %percentage:02% "
+
+format-muted = <label-muted>
+label-muted = "%{R} -- "
+
+[module/wifi]
+type = internal/network
+interface = ${env:WIFI_INTERFACE}
+interval = 10
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+label-connected = %essid:0:15:...%
+format-connected-margin = 1
+format-connected = <ramp-signal><label-connected>
+
+label-disconnected = 
+label-disconnected-foreground = ${colors.teal}
+format-disconnected-margin = 1
+
+[module/date]
+type = internal/date
+
+interval = 1
+
+time = %I:%M%p
+date = %D
+label = "%{R} %date%  %time% "
+format = <label>

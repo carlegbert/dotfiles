@@ -9,7 +9,6 @@ Plug 'mileszs/ack.vim'
 Plug 'jlanzarotta/bufexplorer'
 
 Plug 'mhinz/vim-signify'
-Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive' " TODO: learn how to use this
 Plug 'tpope/vim-rhubarb'
 
@@ -63,6 +62,7 @@ nnoremap <leader>gl :SignifyToggleHighlight<CR>
 nnoremap <leader>gd :SignifyDiff<CR>
 
 """ FZF
+" TODO: ignore from wildignore list
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 nnoremap <C-p> :FZF<CR>
 let g:fzf_colors = {
@@ -79,6 +79,32 @@ let g:fzf_colors = {
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
+
+if (has('nvim-0.4.2'))
+    let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+    function! FloatingFZF()
+      let buf = nvim_create_buf(v:false, v:true)
+      call setbufvar(buf, '&signcolumn', 'no')
+
+      let height = float2nr(10)
+      let width = float2nr(80)
+      let horizontal = float2nr((&columns - width) / 2)
+      let vertical = 1
+
+      let opts = {
+            \ 'relative': 'editor',
+            \ 'row': vertical,
+            \ 'col': horizontal,
+            \ 'width': width,
+            \ 'height': height,
+            \ 'style': 'minimal'
+            \ }
+
+      call nvim_open_win(buf, v:true, opts)
+    endfunction
+endif
 
 """ nerdcommenter settings
 let g:NERDSpaceDelims = 1
