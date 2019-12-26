@@ -3,7 +3,7 @@ syntax enable
 set t_Co=256
 set background=dark
 
-source $HOME/.vim/plugins.vim
+runtime plugins.vim
 
 try
     colorscheme gruvbox

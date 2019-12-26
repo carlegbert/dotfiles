@@ -32,15 +32,6 @@ else
   PS1='"$PS1_PROMPT""$PS1_SYMBOL"'
 fi
 
-# Alias + script definitions
-if [ -f ~/.bash_aliases ]; then
-  source "$HOME/.bash_aliases"
-fi
-
-if [ -f ~/.bash_scripts ]; then
-  source "$HOME/.bash_scripts"
-fi
-
 # editor settings
 export VISUAL=nvim
 export EDITOR="$VISUAL"
@@ -60,4 +51,16 @@ if type most &> /dev/null; then
   export MANPAGER="most"
 fi
 
+
+for f in "$HOME"/.bash/*; do
+    source "$f"
+done
+
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+if type pyenv &> /dev/null; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
