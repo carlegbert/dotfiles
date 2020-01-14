@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+cmds=(
+    "nmcli"
+    "nmtui"
+    "reboot"
+    "shutdown"
+    "halt"
+    "poweroff"
+    "zzz"
+    "ZZZ"
+ )
+
+for cmd in "${cmds[@]}"; do
+    alias "$cmd=sudo $cmd"
+done
