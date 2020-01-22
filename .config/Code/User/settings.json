@@ -24,7 +24,6 @@
   },
   "files.associations": {
     ".envrc": "shellscript",
-    "*.ract": "handlebars",
   },
 
   "[python]": {
@@ -34,13 +33,13 @@
   },
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "/home/cegbert/.local/bin/flake8",
+  "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.flake8Args": ["--ignore=E501"],
   "python.linting.pycodestyleEnabled": true,
-  "python.linting.pycodestylePath": "/home/cegbert/.local/bin/pep8",
+  "python.linting.pycodestylePath": "~/.local/bin/pep8",
   "python.linting.pycodestyleArgs": ["--ignore=E501"],
   "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "/home/cegbert/.local/bin/mypy",
+  "python.linting.mypyPath": "~/.local/bin/mypy",
   "python.linting.mypyArgs": ["--quick-and-dirty"],
   "python.linting.pylintPath": "~/.local/bin/pylint",
   "python.formatting.provider": "black",
