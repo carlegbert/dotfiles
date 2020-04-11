@@ -52,11 +52,16 @@ content-background = ${colors.darkgrey}
 
 [module/sepr1]
 type = custom/text
-content = %{R}
+content = 
+/* content = %{R} */
+content-foreground = ${colors.black}
+content-background = ${colors.teal}
 
 [module/sepr2]
 type = custom/text
 content = 
+content-foreground = ${colors.teal}
+content-background = ${colors.darkgrey}
 
 [module/bspwm]
 type = internal/bspwm
@@ -123,7 +128,6 @@ ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
-ramp-capacity-0-foreground = ${colors.red}
 
 [module/backlight]
 type = internal/backlight
@@ -154,9 +158,9 @@ label-connected = %essid:0:15:...%
 format-connected-margin = 1
 format-connected = <ramp-signal><label-connected>
 
-label-disconnected = 
+label-disconnected =" "
 label-disconnected-foreground = ${colors.teal}
-format-disconnected-margin = 1
+fermat-disconnected-margin = 1
 
 [module/date]
 type = internal/date

@@ -23,6 +23,11 @@ Plug 'amdt/vim-niji'
 
 Plug 'sjl/tslime.vim'
 
+Plug 'lervag/vimtex'
+Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+
+Plug 'SirVer/ultisnips'
+
 " async completion/syntax/linting
 if (has('nvim'))
     Plug 'w0rp/ale'
@@ -135,6 +140,12 @@ let g:tslime_visual_mapping = '<leader>t'
 let g:tslime_vars_mapping = '<leader>T'
 let g:tslime_ensure_trailing_newlines = 1
 
+""" vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+let g:tex_conceal='abdmg'
+
 " async plugins
 if (has('nvim'))
     """ ALE settings
@@ -153,3 +164,4 @@ if (has('nvim'))
     " let g:black_virtualenv = '~/.local/share/virtualenvs/black'
     " autocmd BufWritePre *.py execute ':Black'
 endif
+
