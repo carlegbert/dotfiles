@@ -4,7 +4,15 @@ import os
 
 HOME = os.environ["HOME"]
 CWD = os.getcwd()
-IGNORE = (".git", ".gitignore", ".mypy_cache", "st.config.h", "linkdots.py", "update")
+IGNORE = (
+    ".git",
+    ".gitignore",
+    ".mypy_cache",
+    "st.config.h",
+    "linkdots.py",
+    "update",
+    "nvim-envs",
+)
 
 
 parser = argparse.ArgumentParser()

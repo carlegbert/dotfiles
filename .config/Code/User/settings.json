@@ -1,69 +1,87 @@
 {
-  "editor.acceptSuggestionOnEnter": "off",
-  "editor.suggestOnTriggerCharacters": false,
+  "window.zoomLevel": 2,
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "editor.fontFamily": "'Hack', 'Inconsolata', 'monospace', monospace",
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
+
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.suggestOnTriggerCharacters": false,
   "editor.minimap.enabled": false,
   "diffEditor.renderSideBySide": true,
+
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  // "editor.gotoLocation.multipleImplementations": "goto",
+
   "files.exclude": {
     ".mypy_cache/": true,
     "**/*.pyc": true,
     ".browserify-cache/": true,
     "pip-selfcheck.json": true,
-    "**/*/__pycache__/": true,
+    "**/*/__pycache__/": true
   },
+  "files.associations": {
+    ".envrc": "shellscript",
+  },
+
   "[python]": {
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
-    "editor.rulers": [
-      88
-    ],
+    "editor.rulers": [88]
   },
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "/home/cegbert/.local/bin/flake8",
-  "python.linting.flake8Args": [
-    "--ignore=E501"
-  ],
-  "python.linting.pep8Enabled": true,
-  "python.linting.pep8Path": "/home/cegbert/.local/bin/pep8",
-  "python.linting.pep8Args": [
-    "--ignore=E501"
-  ],
+  "python.linting.flake8Path": "~/.local/bin/flake8",
+  "python.linting.flake8Args": ["--ignore=E501"],
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pycodestylePath": "~/.local/bin/pep8",
+  "python.linting.pycodestyleArgs": ["--ignore=E501"],
   "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "/home/cegbert/.local/bin/mypy",
-  "python.linting.mypyArgs": [
-    "--quick-and-dirty"
-  ],
-  "python.linting.pylintPath": "/home/cegbert/.local/bin/pylint",
+  "python.linting.mypyPath": "~/.local/bin/mypy",
+  "python.linting.mypyArgs": ["--quick-and-dirty"],
+  "python.linting.pylintPath": "~/.local/bin/pylint",
   "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/home/cegbert/.local/bin/black",
+  "python.formatting.blackPath": "~/.local/bin/black",
+  "python.jediEnabled": true,
+
   "[html]": {
     "editor.tabSize": 2
+  },
+
+  "[javascript]": {
+    "editor.formatOnSave": true
   },
   "[typescript]": {
     "editor.formatOnSave": true
   },
-  "files.associations": {
-    ".envrc": "shellscript",
-    "*.ract": "handlebars"
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
   },
-  "window.zoomLevel": 0,
+  "eslint.enable": true,
+  "eslint.run": "onSave",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
   "vim.insertModeKeyBindings": [
     {
-        "before": ["j", "k"],
-        "after": ["<esc>"]
+      "before": ["j", "k"],
+      "after": ["<esc>"]
     }
   ],
   "vim.normalModeKeyBindings": [
     {
       "before": ["<esc>"],
-      "after": [":nohlsearch<enter>"],
+      "after": [":nohlsearch<enter>"]
+    },
+    {
+      "before": ["z", "b"],
+      "after": ["mz<enter>zc"]
     }
   ],
-  "workbench.colorTheme": "Gruvbox Dark (Hard)",
-  "python.jediEnabled": false,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

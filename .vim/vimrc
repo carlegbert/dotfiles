@@ -3,15 +3,6 @@ syntax enable
 set t_Co=256
 set background=dark
 
-runtime plugins.vim
-
-try
-    colorscheme gruvbox
-    let g:airline_theme="gruvbox"
-catch
-    colorscheme elflord
-endtry
-
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -23,11 +14,24 @@ set wildignore=.git,.mypy_cache,node_modules,.browserify-cache,*.o,*.obj,*.pyc,_
 
 if (has('nvim'))
     set signcolumn=yes
+
     " bar cursor in insert
     let &t_SI = "\<Esc>[6 q"
     let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
+
+    set runtimepath^=$HOME/.vim runtimepath+=$HOME/.vim/after
+    let &packpath=&runtimepath
 endif
+
+runtime plugins.vim
+
+try
+    colorscheme gruvbox
+    let g:airline_theme="gruvbox"
+catch
+    colorscheme elflord
+endtry
 
 """ indentation settings
 set smartindent
@@ -141,7 +145,6 @@ function! NumberToggle()
 endfunc
 nnoremap <silent><leader># :call NumberToggle()<CR>
 
-autocmd BufNewFile,BufRead *.ract set filetype=mustache
 autocmd BufNewFile,BufRead .envrc set syntax=sh
 
 if (!empty(glob('~/.scripts/scmindent.rkt')))
