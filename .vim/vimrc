@@ -150,3 +150,9 @@ autocmd BufNewFile,BufRead .envrc set syntax=sh
 if (!empty(glob('~/.scripts/scmindent.rkt')))
     autocmd filetype lisp,scheme,art setlocal equalprg="~/.scripts/scmindent.rkt"
 endif
+
+setlocal spell
+set spelllang=en_us
+" Fix the spelling for the last-typed word
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
