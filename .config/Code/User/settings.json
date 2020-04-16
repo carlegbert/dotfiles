@@ -18,33 +18,12 @@
   "files.exclude": {
     ".mypy_cache/": true,
     "**/*.pyc": true,
-    ".browserify-cache/": true,
     "pip-selfcheck.json": true,
     "**/*/__pycache__/": true
   },
   "files.associations": {
     ".envrc": "shellscript",
   },
-
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4,
-    "editor.rulers": [88]
-  },
-  "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "~/.local/bin/flake8",
-  "python.linting.flake8Args": ["--ignore=E501"],
-  "python.linting.pycodestyleEnabled": true,
-  "python.linting.pycodestylePath": "~/.local/bin/pep8",
-  "python.linting.pycodestyleArgs": ["--ignore=E501"],
-  "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "~/.local/bin/mypy",
-  "python.linting.mypyArgs": ["--quick-and-dirty"],
-  "python.linting.pylintPath": "~/.local/bin/pylint",
-  "python.formatting.provider": "black",
-  "python.formatting.blackPath": "~/.local/bin/black",
-  "python.jediEnabled": true,
 
   "[html]": {
     "editor.tabSize": 2
@@ -68,6 +47,10 @@
     "typescriptreact"
   ],
 
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
@@ -82,6 +65,10 @@
     {
       "before": ["z", "b"],
       "after": ["mz<enter>zc"]
+    },
+    {
+      "before": ["g", "D"],
+      "commands": ["editor.action.revealDefinitionAside"]
     }
   ],
 }
