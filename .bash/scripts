@@ -60,3 +60,11 @@ function ec() {
     cp "$1" "$2"
     "$EDITOR" "$2"
 }
+
+function writeclip() {
+    tmpfile=$(mktemp)
+    "$EDITOR" "$tmpfile"
+    setclip < "$tmpfile"
+    echo "Copied to clipboard:"
+    getclip
+}
