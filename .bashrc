@@ -58,9 +58,3 @@ done
 
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-
-if type pyenv &> /dev/null; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
