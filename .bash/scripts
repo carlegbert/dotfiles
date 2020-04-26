@@ -49,16 +49,20 @@ function dcleanup() {
 function i3lock-wall() {
     WALLDIR="$HOME/Pictures/walls"
     (
-        cd "$WALLDIR"
+        cd "$WALLDIR" || i3lock -e -f -t
         WALL=$(ls | sort -R | tail -1)
-        echo $WALL >> ~/wall.log
+        echo "$WALL" >> ~/wall.log
         i3lock -i "$WALL" -e -f -t
     )
 }
 
 function ec() {
-    cp "$1" "$2"
-    "$EDITOR" "$2"
+  if [ $# != 2 ]; then
+    echo "useage: ec <source> <target>" >&2;
+    return 1;
+  fi
+
+  cp "$1" "$2" && "$EDITOR" "$2"
 }
 
 function writeclip() {
@@ -67,4 +71,17 @@ function writeclip() {
     setclip < "$tmpfile"
     echo "Copied to clipboard:"
     getclip
+}
+
+function editclip() {
+    tmpfile=$(mktemp)
+    getclip > "$tmpfile"
+    "$EDITOR" "$tmpfile"
+    setclip < "$tmpfile"
+    echo "Copied to clipboard:"
+    getclip
+}
+
+function memchk() {
+    valgrind --tool=memcheck --leak-check=full --track-origins=yes "./$1"
 }

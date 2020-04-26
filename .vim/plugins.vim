@@ -40,7 +40,6 @@ if (has('nvim'))
     Plug 'nvie/vim-flake8'
     Plug 'ambv/black'
     Plug 'prettier/vim-prettier'
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 endif
 
 if (has('nvim-0.4'))
@@ -141,15 +140,23 @@ let g:tslime_vars_mapping = '<leader>T'
 let g:tslime_ensure_trailing_newlines = 1
 
 """ vimtex
+let g:polyglot_disabled = ['latex']
 let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
+" let g:vimtex_view_method='okular'
 let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmg'
+call deoplete#custom#var('omni', 'input_patterns', {
+    \ 'tex': g:vimtex#re#deoplete
+    \})
+" let g:vimtex_view_general_viewer = 'okular'
+" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+" let g:vimtex_view_general_options_latexmk = '--unique'
+
 
 """ Ultisnips
-let g:UltiSnipsExpandTrigger='jj'
-let g:UltiSnipsJumpForwardTrigger='jf'
-let g:UltiSnipsJumpForwardTrigger='jb'
+let g:UltiSnipsExpandTrigger='<C-enter>'
+let g:UltiSnipsJumpForwardTrigger='<C-N>'
+let g:UltiSnipsJumpForwardTrigger='<C-B>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " async plugins
