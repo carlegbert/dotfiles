@@ -27,7 +27,8 @@ endif
 runtime plugins.vim
 
 try
-    colorscheme gruvbox
+    let g:miramare_enable_italic = 1
+    colorscheme miramare
     let g:airline_theme="gruvbox"
 catch
     colorscheme elflord
