@@ -1,0 +1,22 @@
+#!/bin/sh
+
+OPT=${1:-$SCREENCONFIG}
+
+case "$OPT" in
+    "desktop")
+        xrandr \
+            --output DP-2 \
+            --primary \
+            --mode 3840x2160 \
+            --pos 0x0 \
+            --rotate normal \
+            --output DVI-D-0 \
+            --mode 1920x1200 \
+            --pos 3840x678 \
+            --rotate left
+        ;;
+    "")
+        ;;
+    *)
+        echo "configuration $OPT not found." >&2;
+esac

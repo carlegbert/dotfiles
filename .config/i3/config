@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# exec --no-startup-id xrandr --output HDMI-1 --auto --right-of eDP-1 --mode 3440x1440
+exec --no-startup-id configure-screens "$SCREENCONFIG"
 exec --no-startup-id feh --randomize --bg-fill --no-fehbg $HOME/Pictures/walls/*.png
 
 exec --no-startup-id nm-applet
@@ -36,7 +36,7 @@ font pango:monospace 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -e tmux
+bindsym $mod+Return exec urxvt -e tmux
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 
 # volume

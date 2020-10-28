@@ -58,3 +58,4 @@ done
 
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
+export PATH="$PATH:$HOME/.local/bin/"

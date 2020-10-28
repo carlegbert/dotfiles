@@ -36,7 +36,7 @@ if (has('nvim'))
     Plug 'zchee/deoplete-jedi'
     Plug 'shougo/neco-vim'
     Plug 'shougo/neco-syntax'
-    Plug 'sheerun/vim-polyglot'
+    " Plug 'sheerun/vim-polyglot'
     Plug 'Glench/Vim-Jinja2-Syntax'
     Plug 'nvie/vim-flake8'
     Plug 'ambv/black'
