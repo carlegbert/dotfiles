@@ -13,7 +13,6 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "editor.gotoLocation.multipleDefinitions": "goto",
-  // "editor.gotoLocation.multipleImplementations": "goto",
 
   "files.exclude": {
     ".mypy_cache/": true,
@@ -38,7 +37,6 @@
   "[typescriptreact]": {
     "editor.formatOnSave": true
   },
-  "eslint.enable": true,
   "eslint.run": "onSave",
   "eslint.validate": [
     "javascript",
@@ -71,4 +69,7 @@
       "commands": ["editor.action.revealDefinitionAside"]
     }
   ],
+  "editor.fontSize": 14,
+  "debug.javascript.usePreview": false,
+  "workbench.editor.showTabs": false,
 }

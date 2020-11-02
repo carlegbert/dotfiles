@@ -64,5 +64,14 @@
     heading = true
     lineNumber = true
 
+[diff]
+	tool = vimdiff
+
 [url "git@github.com:"]
     insteadOf = gh:
+
+[merge]
+    conflictstyle = diff3
+
+[icdiff]
+    options = --highlight --line-numbers
