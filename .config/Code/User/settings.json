@@ -1,6 +1,5 @@
 {
   "window.zoomLevel": 2,
-  "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "editor.fontFamily": "'Hack', 'Inconsolata', 'monospace', monospace",
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
@@ -71,5 +70,7 @@
   ],
   "editor.fontSize": 14,
   "debug.javascript.usePreview": false,
-  "workbench.editor.showTabs": false,
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "files.autoSave": "afterDelay",
+  "git.autofetch": true,
 }
