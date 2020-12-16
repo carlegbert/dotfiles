@@ -66,6 +66,10 @@
     {
       "before": ["g", "D"],
       "commands": ["editor.action.revealDefinitionAside"]
+    },
+    {
+      "before": ["<space>","w"],
+      "commands": ["extension.vim_ctrl+w"]
     }
   ],
   "editor.fontSize": 14,
