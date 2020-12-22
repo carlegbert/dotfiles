@@ -46,12 +46,13 @@
     cl = checkout -
     ap = add -p
     cb = checkout -b
-    lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+    log-pretty = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
     rb = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --count=20
     sloan = commit --no-verify -m
     coma = checkout master
     last = log -1
     amend = commit --amend --no-edit
+    lg = log --pretty=format:'%h %s'
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     mlg = log --pretty=format:'%h %s' HEAD~10..HEAD
     idiff = diff --word-diff=plain
