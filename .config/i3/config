@@ -207,3 +207,9 @@ bar {
         position top
         status_command i3status
 }
+
+## ↓↓↓ machine-specific configuration below this line ↓↓↓
+
+
+
+## ↑↑↑ machine-specific configuration above this line ↑↑↑

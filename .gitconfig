@@ -53,6 +53,7 @@
     last = log -1
     amend = commit --amend --no-edit
     lg = log --pretty=format:'%h %s'
+    log-hash-only = log --pretty=format:'%h'
     shlg = log --pretty=format:'%h %s' HEAD~5..HEAD
     mlg = log --pretty=format:'%h %s' HEAD~10..HEAD
     idiff = diff --word-diff=plain
