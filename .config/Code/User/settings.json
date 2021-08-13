@@ -52,6 +52,18 @@
     {
       "before": ["j", "k"],
       "after": ["<esc>"]
+    },
+    {
+      "before": ["j", "K"],
+      "after": ["<esc>"]
+    },
+    {
+      "before": ["J", "k"],
+      "after": ["<esc>"]
+    },
+    {
+      "before": ["J", "K"],
+      "after": ["<esc>"]
     }
   ],
   "vim.normalModeKeyBindings": [

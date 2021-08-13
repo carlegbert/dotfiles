@@ -64,5 +64,9 @@
     {
         "key": "ctrl+k g",
         "command": "workbench.action.closeEditorsInOtherGroups"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+b",
+        "command": "workbench.action.toggleSidebarVisibility"
     }
 ]
