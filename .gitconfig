@@ -74,6 +74,9 @@
 [url "git@github.com:"]
     insteadOf = gh:
 
+[url "https://aur.archlinux.org/"]
+    insteadOf = aur://
+
 [merge]
     conflictstyle = diff3
 
