@@ -52,7 +52,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym $mod+$alt+l exec i3lock -i "$HOME/Pictures/walls/$(ls $HOME/Pictures/walls | sort -R | tail -1)" -e -f -t
 
 # browser
-bindsym $mod+b exec google-chrome
+bindsym $mod+b exec "$BROWSER"
 
 # kill focused window
 bindsym $mod+Shift+q kill
