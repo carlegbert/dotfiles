@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 exec --no-startup-id configure-screens "$SCREENCONFIG"
-exec --no-startup-id feh --randomize --bg-fill --no-fehbg $HOME/Pictures/walls/*.png
+exec --no-startup-id feh --randomize --bg-fill --no-fehbg --no-xinerama $HOME/Pictures/walls/*.png
 
 exec --no-startup-id nm-applet
 
