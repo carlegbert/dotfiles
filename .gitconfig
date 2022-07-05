@@ -62,6 +62,8 @@
     pushu = push origin -u HEAD
     cm-empty = commit -m \"empty commit\" --allow-empty
     lasthash = log-hash-only -1
+    sta = stash
+    stap = stash pop
 
 [grep]
     break = true
