@@ -12,19 +12,15 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
 set wildignore=.git,.mypy_cache,node_modules,.browserify-cache,*.o,*.obj,*.pyc,__pycache,vgcore.*
 
-if (has('nvim'))
-    set signcolumn=yes
+set signcolumn=yes
 
-    " bar cursor in insert
-    let &t_SI = "\<Esc>[6 q"
-    let &t_SR = "\<Esc>[4 q"
-    let &t_EI = "\<Esc>[2 q"
+" bar cursor in insert
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
-    set runtimepath^=$HOME/.vim runtimepath+=$HOME/.vim/after
-    let &packpath=&runtimepath
-endif
-
-runtime plugins.vim
+set runtimepath^=$HOME/.config/nvim runtimepath+=$HOME/.config/nvim/after
+let &packpath=&runtimepath
 
 try
     colorscheme gruvbox
@@ -48,7 +44,6 @@ set incsearch
 set wrapscan
 set ignorecase
 set smartcase
-let g:ackprg = 'ag --vimgrep'
 
 """ split settings
 set splitright
