@@ -48,6 +48,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[rust]": {
+    "editor.formatOnSave": true
+  },
+
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
@@ -86,7 +90,14 @@
   ],
   "editor.fontSize": 14,
   "debug.javascript.usePreview": false,
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "files.autoSave": "afterDelay",
   "git.autofetch": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "extensions.ignoreRecommendations": true,
+  "git.openRepositoryInParentFolders": "never",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "arduino.useArduinoCli": true,
 }
