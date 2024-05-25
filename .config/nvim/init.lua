@@ -1,4 +1,3 @@
--- init.lua
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
@@ -27,10 +26,10 @@ vim.opt.hlsearch = true
 
 vim.keymap.set('n', '<leader>n', vim.cmd.nohlsearch)
 
-vim.keymap.set('n', '/', 'ml/')
-vim.keymap.set('n', '?', 'ml?')
-vim.keymap.set('n', 'gg', 'mlgg')
-vim.keymap.set('n', 'G', 'mlG')
+vim.keymap.set('n', '/', "m'/")
+vim.keymap.set('n', '?', "m'?")
+vim.keymap.set('n', 'gg', "m'gg")
+vim.keymap.set('n', 'G', "m'G")
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -48,9 +47,9 @@ vim.keymap.set('i', 'jk', '<esc>')
 vim.keymap.set('n', '<tab>', '%')
 vim.keymap.set('v', '<tab>', '%')
 
-vim.keymap.set('n', '<leader><leader>[', vim.cmd.bprev)
-vim.keymap.set('n', '<leader><leader>]', vim.cmd.bnext)
-vim.keymap.set('n', '<leader><leader><delete>', vim.cmd.bdel)
+vim.keymap.set('n', '<leader><leader>[', vim.cmd.bprev, { desc = 'Next Buffer' })
+vim.keymap.set('n', '<leader><leader>]', vim.cmd.bnext, { desc = 'Previous Buffer' })
+vim.keymap.set('n', '<leader><leader>d', vim.cmd.bdel, { desc = 'Delete Buffer' })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -60,7 +59,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -73,10 +71,11 @@ require('lazy').setup {
   'tpope/vim-surround',
   'tpope/vim-vinegar',
   'amdt/vim-niji',
-  'vim-airline/vim-airline',
+  -- 'vim-airline/vim-airline',
   'jiangmiao/auto-pairs',
   'lervag/vimtex',
   { 'folke/neodev.nvim', opts = {} },
+  { 'nvim-lualine/lualine.nvim', opts = {} },
 
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -92,9 +91,12 @@ require('lazy').setup {
     'numToStr/Comment.nvim',
     opts = {
       toggler = {
-        line = 'cc',
-        block = 'CC',
+        line = 'cc', block = 'CC',
       },
+      opleader = {
+        line = '<leader>/',
+        block = '<leader>\\',
+      }
     },
   },
 

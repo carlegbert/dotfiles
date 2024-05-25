@@ -71,7 +71,7 @@
     lineNumber = true
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 
 [url "git@github.com:"]
     insteadOf = gh:
@@ -85,4 +85,4 @@
 [icdiff]
     options = --highlight --line-numbers
 [init]
-	defaultBranch = main
+    defaultBranch = main
