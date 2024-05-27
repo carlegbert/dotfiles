@@ -33,6 +33,10 @@ return {
 
         map('<leader>ws', require('telescope.builtin').lsp_workspace_symbols, '[W]orkspace [S]ymbols')
 
+        map('<leader>f', function()
+          vim.lsp.buf.format({ async = true })
+        end, '[F]ormat Buffer')
+
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
           local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
