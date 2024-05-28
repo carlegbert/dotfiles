@@ -24,13 +24,22 @@ require('lazy').setup {
   'tpope/vim-surround',
   'tpope/vim-vinegar',
   'amdt/vim-niji',
-  -- 'vim-airline/vim-airline',
   'jiangmiao/auto-pairs',
-  'lervag/vimtex',
-  { 'folke/neodev.nvim', opts = {} },
   { 'nvim-lualine/lualine.nvim', opts = {} },
 
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  { 'tpope/vim-fugitive' },
+
+  {
+    'folke/neodev.nvim',
+    opts = {}
+  },
+
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = false },
+  },
 
   {
     'folke/tokyonight.nvim',
