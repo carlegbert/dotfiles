@@ -24,3 +24,9 @@ vim.keymap.set('n', '<leader><leader>[', vim.cmd.bprev, { desc = 'Next Buffer' }
 vim.keymap.set('n', '<leader><leader>]', vim.cmd.bnext, { desc = 'Previous Buffer' })
 vim.keymap.set('n', '<leader><leader>d', vim.cmd.bdel, { desc = 'Delete Buffer' })
 
+-- switch to using nvim_open_win when 0.11 is released
+vim.keymap.set('n', 'vv', ':vsplit<CR>', { desc = 'Open vertical split' })
+
+vim.keymap.set('n', ']c', vim.cmd.cnext, { desc = 'Next in quickfix list' })
+vim.keymap.set('n', '[c', vim.cmd.cnext, { desc = 'Prev in quickfix list' })
+vim.keymap.set('n', '<leader>cf', vim.cmd.cfirst, { desc = 'First in quickfix list' })

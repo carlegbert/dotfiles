@@ -17,6 +17,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
+  require('carl.gitsigns'),
   require('carl.telescope'),
   require('carl.lsp'),
   require('carl.nvim-cmp'),
@@ -59,19 +60,6 @@ require('lazy').setup {
         line = '<leader>/',
         block = '<leader>\\',
       }
-    },
-  },
-
-  {
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
     },
   },
 }
