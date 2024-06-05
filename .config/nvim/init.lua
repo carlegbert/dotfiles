@@ -26,6 +26,8 @@ require('lazy').setup {
   'tpope/vim-vinegar',
   'amdt/vim-niji',
   'jiangmiao/auto-pairs',
+  'lewis6991/satellite.nvim',
+
   { 'nvim-lualine/lualine.nvim', opts = {} },
 
   { 'tpope/vim-fugitive' },
