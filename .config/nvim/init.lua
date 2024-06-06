@@ -26,8 +26,17 @@ require('lazy').setup {
   'jiangmiao/auto-pairs',
   'lewis6991/satellite.nvim',
   'tpope/vim-fugitive',
+
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    opts = {
+      max_lines = 5,
+      trim_scope = 'inner',
+    },
+  },
+
   { 'nvim-lualine/lualine.nvim', opts = {} },
-  { 'folke/neodev.nvim', opts = {} },
+  { 'folke/neodev.nvim',         opts = {} },
 
   {
     'folke/todo-comments.nvim',
