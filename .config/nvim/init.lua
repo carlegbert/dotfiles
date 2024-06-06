@@ -22,6 +22,7 @@ require('lazy').setup {
   require('carl.telescope'),
   require('carl.lsp'),
   require('carl.nvim-cmp'),
+  require('carl.treesitter'),
   'tpope/vim-sleuth',
   'tpope/vim-surround',
   'tpope/vim-vinegar',
