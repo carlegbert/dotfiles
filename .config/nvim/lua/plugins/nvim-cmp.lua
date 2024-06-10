@@ -7,12 +7,21 @@ return {
     'hrsh7th/cmp-path',
     {
       'L3MON4D3/LuaSnip',
+      version = 'v2.*',
       build = (function()
         if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
           return
         end
         return 'make install_jsregexp'
       end)(),
+      dependencies = {
+        {
+          'rafamadriz/friendly-snippets',
+          config = function()
+            require('luasnip.loaders.from_vscode').lazy_load()
+          end
+        }
+      }
     },
   },
   config = function()
@@ -45,5 +54,25 @@ return {
         { name = 'path' },
       },
     }
+
+    local lsfwd = function() luasnip.jump(1) end
+    local lsback = function() luasnip.jump(-1) end
+    local change_choice = function()
+      if luasnip.choice_active() then
+        luasnip.change_choice(1)
+      end
+    end
+
+    local map = function(mode, keys, fn, desc)
+      vim.keymap.set(mode, keys, fn, {
+        silent = true,
+        desc = 'Luasnip: ' .. desc,
+      })
+    end
+
+    map('i', '<C-K>', luasnip.expand, 'Expand Snippet')
+    map({ 'i', 's' }, '<C-L>', lsfwd, 'Forward')
+    map({ 'i', 's' }, '<C-J>', lsback, 'Back')
+    map({ 'i', 's' }, '<C-E>', change_choice, 'Change Choice')
   end,
 }

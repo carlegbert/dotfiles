@@ -4,6 +4,7 @@ return {
     { 'williamboman/mason.nvim', config = true },
     'williamboman/mason-lspconfig.nvim',
     'nvim-telescope/telescope.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -112,20 +113,26 @@ return {
       },
     }
 
+    require('lspconfig').racket_langserver.setup({})
+
     require('mason').setup()
     local ensure_installed = vim.tbl_keys(servers)
     vim.list_extend(ensure_installed, {
       'stylua',
     })
 
+    require('mason-tool-installer').setup({
+      ensure_installed = ensure_installed,
+    })
+
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
-          local server = servers[server_name]
+          local server = servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
       }
     }
-  end
+  end,
 }
