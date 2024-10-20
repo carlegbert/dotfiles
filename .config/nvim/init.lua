@@ -21,7 +21,6 @@ require("lazy").setup({
 	{ import = "plugins" },
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
-	"tpope/vim-vinegar",
 	"amdt/vim-niji",
 	"jiangmiao/auto-pairs",
 	"lewis6991/satellite.nvim",
