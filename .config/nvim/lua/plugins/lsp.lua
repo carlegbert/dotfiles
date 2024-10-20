@@ -118,6 +118,7 @@ return {
       'eslint',
       'prettier',
       'dockerls',
+      'clangd',
     })
 
     require('mason-tool-installer').setup({
