@@ -1,5 +1,6 @@
 require("opts")
 require("mappings")
+require("eol")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
