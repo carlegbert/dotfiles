@@ -16,6 +16,7 @@ return {
 			cpp = { "clang-format" },
 			go = { "gofmt" },
 			lua = { "stylua" },
+			python = { "ruff_format" },
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
 		},

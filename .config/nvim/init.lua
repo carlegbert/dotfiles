@@ -36,7 +36,6 @@ require("lazy").setup({
 	},
 
 	{ "nvim-lualine/lualine.nvim", opts = {} },
-	{ "folke/neodev.nvim", opts = {} },
 
 	{
 		"folke/todo-comments.nvim",
