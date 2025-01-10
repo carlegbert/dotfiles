@@ -99,5 +99,12 @@
   "extensions.ignoreRecommendations": true,
   "git.openRepositoryInParentFolders": "never",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "arduino.useArduinoCli": true,"remote.SSH.remotePlatform": {"coder-vscode--carl--testorama":"linux"},"remote.SSH.connectTimeout": 1800,
+  "arduino.useArduinoCli": true,
+  "remote.SSH.remotePlatform": {
+    "coder-vscode--carl--testorama": "linux"
+  },
+  "remote.SSH.connectTimeout": 1800,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
