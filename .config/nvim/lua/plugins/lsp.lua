@@ -118,6 +118,7 @@ return {
 			"dockerls",
 			"clangd",
 			"cpptools",
+			"vale",
 		})
 
 		require("mason-tool-installer").setup({

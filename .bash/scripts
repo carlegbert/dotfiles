@@ -83,5 +83,5 @@ function editclip() {
 }
 
 function memchk() {
-    valgrind --tool=memcheck --leak-check=full --track-origins=yes "./$1"
+    valgrind --tool=memcheck --leak-check=full --track-origins=yes "$1"
 }
