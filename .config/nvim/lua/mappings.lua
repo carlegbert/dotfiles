@@ -6,8 +6,16 @@ local open_diagnostic_float = function()
 	})
 end
 
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+local diag_prev = function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end
+
+local diag_next = function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end
+
+vim.keymap.set("n", "[d", diag_prev, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", diag_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", open_diagnostic_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
