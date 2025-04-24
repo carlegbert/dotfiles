@@ -20,19 +20,23 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ import = "plugins" },
+	"tpope/vim-fugitive",
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
 	"amdt/vim-niji",
 	"jiangmiao/auto-pairs",
 	"lewis6991/satellite.nvim",
-	"tpope/vim-fugitive",
 
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		opts = {
 			max_lines = 5,
-			trim_scope = "inner",
+			trim_scope = "outer",
 		},
+		init = function()
+			local tsctx = require("treesitter-context")
+			vim.keymap.set("n", "<leader>tt", tsctx.toggle, { desc = "[T]oggle [T]reesitter Context" })
+		end,
 	},
 
 	{ "nvim-lualine/lualine.nvim", opts = {} },
@@ -41,7 +45,7 @@ require("lazy").setup({
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = { signs = false },
+		opts = { signs = true },
 	},
 
 	{
@@ -66,5 +70,3 @@ require("lazy").setup({
 		},
 	},
 })
-
--- vim: ts=2 sts=2 sw=2 et
