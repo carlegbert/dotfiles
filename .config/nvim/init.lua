@@ -39,7 +39,7 @@ require("lazy").setup({
 		end,
 	},
 
-	{ "nvim-lualine/lualine.nvim", opts = {} },
+	{ "nvim-lualine/lualine.nvim", opts = { theme = "auto" } },
 
 	{
 		"folke/todo-comments.nvim",
@@ -49,10 +49,11 @@ require("lazy").setup({
 	},
 
 	{
-		"folke/tokyonight.nvim",
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
 		priority = 1000,
-		init = function()
-			vim.cmd.colorscheme("tokyonight-moon")
+		config = function()
+			vim.cmd.colorscheme("cyberdream")
 		end,
 	},
 
@@ -68,5 +69,19 @@ require("lazy").setup({
 				block = "<leader>\\",
 			},
 		},
+	},
+
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("nvim-tree").setup({})
+			local api = require('nvim-tree.api')
+			vim.keymap.set("n", "<leader>ds", api.tree.toggle, { desc = "Toggle Tree" })
+		end,
 	},
 })
