@@ -62,3 +62,6 @@ export NVM_DIR="$HOME/.config/nvm"
 
 eval "$(ssh-agent &)" &> /dev/null
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"
+eval "$(uv generate-shell-completion bash)"

@@ -52,6 +52,11 @@
     "editor.formatOnSave": true
   },
 
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnSave": true,
+  },
+
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
@@ -107,4 +112,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "git.ignoreLegacyWarning": true,
 }
