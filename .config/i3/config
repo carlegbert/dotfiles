@@ -60,6 +60,9 @@ bindsym $mod+Shift+q kill
 # start launcher
 bindsym $mod+space exec rofi -show run -theme Indego.rasi
 
+bindsym $mod+Shift+space exec rofi -show window -theme Indego.rasi
+
+
 bindsym $mod+p exec passmenu
 
 # change focus
