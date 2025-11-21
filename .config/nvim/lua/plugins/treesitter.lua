@@ -22,6 +22,7 @@ return {
 			"luadoc",
 			"markdown",
 			"mermaid",
+			"ocaml",
 			"prisma",
 			"python",
 			"rust",

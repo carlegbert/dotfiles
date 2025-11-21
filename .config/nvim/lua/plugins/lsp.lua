@@ -111,13 +111,14 @@ return {
 		require("mason").setup()
 		local ensure_installed = vim.tbl_keys(servers)
 		vim.list_extend(ensure_installed, {
-			"ruff",
-			"stylua",
-			"eslint",
-			"prettier",
-			"dockerls",
 			"clangd",
 			"cpptools",
+			"dockerls",
+			"eslint",
+			"prettier",
+			"protols",
+			"ruff",
+			"stylua",
 			"vale",
 		})
 
@@ -134,5 +135,7 @@ return {
 				end,
 			},
 		})
+
+		require("lspconfig").ocamllsp.setup({})
 	end,
 }
