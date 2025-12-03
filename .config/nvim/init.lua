@@ -1,7 +1,5 @@
-require("opts")
-require("mappings")
-require("eol")
-require("fqf")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",

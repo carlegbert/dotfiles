@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<leader>n", vim.cmd.nohlsearch)
-
 local open_diagnostic_float = function()
 	vim.diagnostic.open_float({
 		border = "rounded",
@@ -13,6 +11,8 @@ end
 local diag_next = function()
 	vim.diagnostic.jump({ count = 1, float = true })
 end
+
+vim.keymap.set("n", "<leader>n", vim.cmd.nohlsearch)
 
 vim.keymap.set("n", "[d", diag_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", diag_next, { desc = "Go to next [D]iagnostic message" })
@@ -39,3 +39,5 @@ vim.keymap.set("n", "]c", vim.cmd.cnext, { desc = "Next in quickfix list" })
 vim.keymap.set("n", "[c", vim.cmd.cnext, { desc = "Prev in quickfix list" })
 vim.keymap.set("n", "<leader>cf", vim.cmd.cfirst, { desc = "First in quickfix list" })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mode" })
+
+vim.keymap.set("n", "<leader>mf", require("misc.make-floating").MakeCurrentWindowFloating)

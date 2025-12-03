@@ -1,3 +1,5 @@
+local M = {}
+
 function MakeCurrentWindowFloating()
 	local buf = vim.api.nvim_get_current_buf()
 	local width = math.floor(vim.o.columns * 0.8)
@@ -17,4 +19,6 @@ function MakeCurrentWindowFloating()
 	})
 end
 
-vim.keymap.set("n", "<leader>mf", MakeCurrentWindowFloating)
+M.MakeCurrentWindowFloating = MakeCurrentWindowFloating
+
+return M
