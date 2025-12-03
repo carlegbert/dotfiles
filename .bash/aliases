@@ -45,3 +45,5 @@ alias sicp='racket -i -p neil/sicp -l xrepl'
 alias magit='"$EDITOR" -c MagitOnly'
 
 alias racket-langserver='racket -l racket-langserver'
+
+alias gkb='ghostty +list-keybinds | fzf'

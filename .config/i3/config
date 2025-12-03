@@ -37,7 +37,7 @@ font pango:Hack 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux
+bindsym $mod+Return exec ghostty
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 
 # volume

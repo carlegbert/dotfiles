@@ -1,0 +1,4 @@
+font-family = Hack
+theme = Deep
+window-decoration = server
+shell-integration = bash
