@@ -40,4 +40,15 @@ vim.keymap.set("n", "[c", vim.cmd.cnext, { desc = "Prev in quickfix list" })
 vim.keymap.set("n", "<leader>cf", vim.cmd.cfirst, { desc = "First in quickfix list" })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mode" })
 
-vim.keymap.set("n", "<leader>mf", require("misc.make-floating").MakeCurrentWindowFloating)
+vim.keymap.set(
+	"n",
+	"<leader>mf",
+	require("misc.make-floating").MakeCurrentWindowFloating,
+	{ desc = "Make current window floating" }
+)
+
+vim.keymap.set("i", "<S-Tab>", require("misc.smart-tab").SmartTab, {
+	silent = true,
+	noremap = true,
+	desc = "Move to or past next closing bracket/quote in insert mode",
+})
