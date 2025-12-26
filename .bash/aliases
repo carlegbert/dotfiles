@@ -47,3 +47,5 @@ alias magit='"$EDITOR" -c MagitOnly'
 alias racket-langserver='racket -l racket-langserver'
 
 alias gkb='ghostty +list-keybinds | fzf'
+
+alias dots='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
