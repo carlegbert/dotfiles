@@ -32,6 +32,12 @@ else
   PROMPT="$PS1_PROMPT$PS1_SYMBOL"
 fi
 
+# keyboard bindings
+bindkey "^[[1;5C" forward-word   # ctrl+right
+bindkey "^[[1;5D" backward-word  # ctrl+left
+bindkey "^[[H" beginning-of-line # home
+bindkey "^[[F" end-of-line       # end
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /usr/bin/direnv ] && eval "$(direnv hook zsh)"
