@@ -24,6 +24,6 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 eval "$(ssh-agent &)" &> /dev/null
-source "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-source "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
