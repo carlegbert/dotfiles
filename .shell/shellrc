@@ -13,6 +13,10 @@ for f in "$HOME"/.shell/*; do
   source "$f"
 done
 
+for f in "$HOME"/.shellenv/*; do
+  source "$f"
+done
+
 export PATH="$PATH:$HOME/.local/bin/"
 
 export NVM_DIR="$HOME/.config/nvm"
