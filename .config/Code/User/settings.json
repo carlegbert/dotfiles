@@ -105,7 +105,7 @@
   ],
   "editor.fontSize": 14,
   "debug.javascript.usePreview": false,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Tokyo Night",
   "files.autoSave": "afterDelay",
   "git.autofetch": true,
   "[python]": {
