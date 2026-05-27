@@ -36,6 +36,6 @@ fi
 
 [ -f /usr/bin/direnv ] && eval "$(direnv hook bash)"
 
-source "$HOME/.shell/shellrc"
+source "$HOME/.shellrc"
 
 eval "$(uv generate-shell-completion bash)"

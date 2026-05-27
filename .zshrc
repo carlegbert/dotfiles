@@ -36,6 +36,6 @@ fi
 
 [ -f /usr/bin/direnv ] && eval "$(direnv hook zsh)"
 
-source "$HOME/.shell/shellrc"
+source "$HOME/.shellrc"
 
 eval "$(uv generate-shell-completion zsh)"
