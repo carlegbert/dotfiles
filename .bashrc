@@ -32,36 +32,10 @@ else
   PS1='"$PS1_PROMPT""$PS1_SYMBOL"'
 fi
 
-# editor settings
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
-# misc variables
-export XDG_CONFIG_HOME="$HOME/.config"
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f /usr/bin/direnv ] && eval "$(direnv hook bash)"
 
-if type most &> /dev/null; then
-  export MANPAGER="most"
-fi
+source "$HOME/.shell/shellrc"
 
-
-for f in "$HOME"/.bash/*; do
-    source "$f"
-done
-
-[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
-
-export PATH="$PATH:$HOME/.local/bin/"
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(ssh-agent &)" &> /dev/null
-. "$HOME/.cargo/env"
-
-. "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion bash)"

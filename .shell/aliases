@@ -1,6 +1,5 @@
-#! /usr/bin/env bash
-
 if [ -x /usr/bin/dircolors ]; then
+  # Linux with GNU coreutils
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
   #alias dir='dir --color=auto'
@@ -9,10 +8,17 @@ if [ -x /usr/bin/dircolors ]; then
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  # macOS — BSD ls uses -G for color
+  alias ls='ls -G'
+
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 # laziness aliases
-alias ..='_..' # see ~/.bash_scripts
+alias ..='_..' # see ~/.shell/scripts
 alias ...='_.. 2'
 alias ....='_.. 3'
 alias die='shutdown now'

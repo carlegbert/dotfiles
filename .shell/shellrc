@@ -1,0 +1,25 @@
+# editor settings
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# misc variables
+export XDG_CONFIG_HOME="$HOME/.config"
+
+if type most &> /dev/null; then
+  export MANPAGER="most"
+fi
+
+for f in "$HOME"/.shell/*; do
+  source "$f"
+done
+
+export PATH="$PATH:$HOME/.local/bin/"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+eval "$(ssh-agent &)" &> /dev/null
+source "$HOME/.cargo/env"
+
+source "$HOME/.local/bin/env"
