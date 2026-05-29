@@ -8,6 +8,10 @@ if [ -x /usr/bin/dircolors ]; then
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
+
+  alias setclip='xclip -selection c'
+  alias getclip='xclip -selection clipboard -o'
+  alias clearclip='xclip -selection c < /dev/null'
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS — BSD ls uses -G for color
   alias ls='ls -G'
@@ -15,6 +19,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
+
+  alias setclip='pbcopy'
+  alias getclip='pbpaste'
+  alias clearclip='pbcopy < /dev/null'
 fi
 
 # laziness aliases
@@ -34,10 +42,6 @@ alias tempdir='cd $(mktemp -d)'
 alias doco="docker compose"
 alias ku="kubectl"
 
-# xclip aliases
-alias setclip='xclip -selection c'
-alias getclip='xclip -selection clipboard -o'
-alias clearclip='xclip -selection c < /dev/null'
 # random throwaway password
 alias randpass='openssl rand -base64 32 | setclip'
 

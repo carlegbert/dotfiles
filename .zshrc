@@ -37,6 +37,9 @@ bindkey "^[[1;5C" forward-word   # ctrl+right
 bindkey "^[[1;5D" backward-word  # ctrl+left
 bindkey "^[[H" beginning-of-line # home
 bindkey "^[[F" end-of-line       # end
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey "^x^e" edit-command-line # ctrl+x ctrl+e: edit line in $EDITOR
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

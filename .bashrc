@@ -38,4 +38,4 @@ fi
 
 source "$HOME/.shellrc"
 
-eval "$(uv generate-shell-completion bash)"
+command -v uv &>/dev/null && eval "$(uv generate-shell-completion bash)"

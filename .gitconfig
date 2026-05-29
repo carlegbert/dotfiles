@@ -6,7 +6,7 @@
     user = carlegbert
 
 [credential]
-    helper = cache --timeout=36000
+    helper = ~/.local/bin/git-credential-os
 
 [color]
     ui = true
