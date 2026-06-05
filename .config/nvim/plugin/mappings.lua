@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader><leader>d", vim.cmd.bdel, { desc = "Delete Buffer" 
 vim.keymap.set("n", "vv", ":vsplit<CR>", { desc = "Open vertical split" })
 
 vim.keymap.set("n", "]c", vim.cmd.cnext, { desc = "Next in quickfix list" })
-vim.keymap.set("n", "[c", vim.cmd.cnext, { desc = "Prev in quickfix list" })
+vim.keymap.set("n", "[c", vim.cmd.cprev, { desc = "Prev in quickfix list" })
 vim.keymap.set("n", "<leader>cf", vim.cmd.cfirst, { desc = "First in quickfix list" })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mode" })
 

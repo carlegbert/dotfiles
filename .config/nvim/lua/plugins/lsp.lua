@@ -19,16 +19,11 @@ return {
 				end
 
 				map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-
 				map("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
-
 				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 				vmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
-
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				local telescope_builtin = require("telescope.builtin")
@@ -42,9 +37,7 @@ return {
 				map("<leader>ss", doc_symbols, "[S]earch Document [S]ymbols")
 				map("<leader>sas", telescope_builtin.lsp_document_symbols, "[S]earch [A]ll Document [S]ymbols")
 				map("<leader>ws", telescope_builtin.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
-
 				map("gI", telescope_builtin.lsp_implementations, "[G]oto [I]mplementation")
-
 				map("<leader>D", telescope_builtin.lsp_type_definitions, "Type [D]efinition")
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -81,61 +74,41 @@ return {
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-		local servers = {
-			gopls = {},
-			pyright = {},
-			rust_analyzer = {},
-			ts_ls = {},
 
-			lua_ls = {
-				settings = {
-					Lua = {
-						runtime = {
-							Version = "LuaJIT",
-						},
-						completion = {},
-						diagnostics = {
-							globals = {
-								"vim",
-								"require",
-							},
-						},
-						workspace = {
-							library = vim.api.nvim_get_runtime_file("", true),
-						},
-					},
+		vim.lsp.config("*", { capabilities = capabilities })
+
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					runtime = { version = "LuaJIT" },
+					completion = {},
+					diagnostics = { globals = { "vim", "require" } },
+					workspace = { library = vim.api.nvim_get_runtime_file("", true) },
 				},
 			},
-		}
+		})
 
 		require("mason").setup()
-		local ensure_installed = vim.tbl_keys(servers)
-		vim.list_extend(ensure_installed, {
-			"clangd",
-			"cpptools",
-			"dockerls",
-			"eslint",
-			"prettier",
-			"protols",
-			"ruff",
-			"stylua",
-			"vale",
-		})
 
 		require("mason-tool-installer").setup({
-			ensure_installed = ensure_installed,
-		})
-
-		require("mason-lspconfig").setup({
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
-				end,
+			ensure_installed = {
+				"gopls",
+				"pyright",
+				"rust_analyzer",
+				"ts_ls",
+				"lua_ls",
+				"clangd",
+				"cpptools",
+				"dockerls",
+				"eslint",
+				"prettier",
+				"protols",
+				"ruff",
+				"stylua",
+				"vale",
 			},
 		})
 
-		require("lspconfig").ocamllsp.setup({})
+		require("mason-lspconfig").setup()
 	end,
 }

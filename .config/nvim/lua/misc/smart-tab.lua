@@ -1,4 +1,4 @@
-function SmartTab()
+local function SmartTab()
 	local r, c = unpack(vim.api.nvim_win_get_cursor(0))
 	local line = vim.api.nvim_get_current_line()
 

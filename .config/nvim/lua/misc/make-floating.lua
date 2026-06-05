@@ -1,6 +1,6 @@
 local M = {}
 
-function MakeCurrentWindowFloating()
+local function MakeCurrentWindowFloating()
 	local buf = vim.api.nvim_get_current_buf()
 	local width = math.floor(vim.o.columns * 0.8)
 	local height = math.floor(vim.o.lines * 0.8)
