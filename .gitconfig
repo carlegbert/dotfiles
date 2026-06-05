@@ -64,6 +64,7 @@
     lasthash = log-hash-only -1
     sta = stash
     stap = stash pop
+    ds = diff --staged
 
 [grep]
     break = true
@@ -80,7 +81,7 @@
     insteadOf = aur://
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 
 [icdiff]
     options = --highlight --line-numbers
