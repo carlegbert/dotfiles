@@ -1,0 +1,16 @@
+{
+  "name": "open-all-references",
+  "displayName": "Open All References",
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.60.0" },
+  "activationEvents": ["onCommand:open-all-references.openAll"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "open-all-references.openAll",
+        "title": "Open All References in Tabs"
+      }
+    ]
+  }
+}

@@ -101,6 +101,10 @@
     {
       "before": ["<space>", "p", "k"],
       "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<space>", "o", "r"],
+      "commands": ["open-all-references.openAll"]
     }
   ],
   "editor.fontSize": 14,
