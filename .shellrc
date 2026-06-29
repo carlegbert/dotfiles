@@ -18,6 +18,8 @@ for f in "$HOME"/.shellenv/*; do
 done
 
 export PATH="$PATH:$HOME/.local/bin/"
+[[ "$OSTYPE" == darwin* ]] && \
+  export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export NVM_DIR="$HOME/.config/nvm"
 

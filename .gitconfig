@@ -38,6 +38,15 @@
     excludesfile = ~/.gitignore_global
     editor = $EDITOR
     autocrlf = input
+    pager = "command -v delta >/dev/null 2>&1 && delta || less"
+
+[interactive]
+    diffFilter = "command -v delta >/dev/null 2>&1 && delta --color-only || cat"
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
 
 [alias]
     cm = commit -m

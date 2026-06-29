@@ -83,3 +83,16 @@ function editclip() {
 function memchk() {
     valgrind --tool=memcheck --leak-check=full --track-origins=yes --show-leak-kinds=all "$1"
 }
+
+function envcp() {
+  local selection
+  selection=$(env | sort | fzf \
+    --prompt="env> " \
+    --delimiter='=' \
+    --with-nth=1 \
+    --preview='echo {} | cut -d= -f2-' \
+    --preview-window=down:3:wrap)
+  [ -z "$selection" ] && return 0
+  printf '%s' "${selection#*=}" | setclip
+  echo "Copied: ${selection%%=*}"
+}
