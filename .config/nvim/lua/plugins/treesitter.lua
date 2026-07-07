@@ -56,5 +56,9 @@ return {
 	config = function(_, opts)
 		vim.highlight.priorities.semantic_tokens = 95
 		require("nvim-treesitter").setup(opts)
+		vim.api.nvim_create_autocmd("BufRead", {
+			pattern = "addp-hunk-edit.diff",
+			command = "setfiletype diff",
+		})
 	end,
 }

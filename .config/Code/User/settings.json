@@ -105,6 +105,10 @@
     {
       "before": ["<space>", "o", "r"],
       "commands": ["open-all-references.openAll"]
+    },
+    {
+      "before": ["<space>", "o", "c"],
+      "commands": ["open-git-changes.openAll"]
     }
   ],
   "editor.fontSize": 14,
