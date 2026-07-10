@@ -4,8 +4,6 @@ return {
 	opts = {
 		linters_by_ft = {
 			c = { "clang-tidy" },
-			typescript = { "eslint" },
-			typescriptreact = { "eslint" },
 			python = { "ruff" },
 		},
 	},

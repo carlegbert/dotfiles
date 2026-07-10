@@ -15,6 +15,8 @@ return {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			go = { "gofmt" },
+			javascript = { "prettier" },
+			javascriptreact = { "prettier" },
 			json = { "prettier" },
 			lua = { "stylua" },
 			markdown = { "prettier" },
