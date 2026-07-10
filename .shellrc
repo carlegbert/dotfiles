@@ -1,6 +1,7 @@
 # editor settings
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export VD_CONFIG=".config/visidatarc"
 
 # misc variables
 export XDG_CONFIG_HOME="$HOME/.config"

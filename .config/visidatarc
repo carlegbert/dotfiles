@@ -1,0 +1,29 @@
+# vim: filetype=python
+
+from visidata import VisiData, options, vd
+
+
+options.col_names = True
+options.row_numbers = True
+options.wrap = True
+options.header_rows = 1
+
+options.disp_menu = True
+
+options.fixed_rows = 5000
+
+options.color_theme = 'light'
+
+vd.bindkey('gg', 'first-row')
+vd.bindkey('G', 'last-row')
+
+# Copy the value of the currently selected cell to the system clipboard
+@VisiData.api
+def copy_cell_to_clipboard(vd):
+    import subprocess
+    cell_value = vd.cursorCell.value
+    run_cmd = f"echo '{cell_value}' | pbcopy"
+    subprocess.run(run_cmd, shell=True)
+    vd.status("Copied cell value to clipboard!")
+
+vd.bindkey('y', 'copy-cell_to_clipboard')
